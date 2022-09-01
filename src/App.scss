@@ -5,7 +5,9 @@
   box-sizing: border-box;
   font-family: variables.$primary-font;
 }
-
+.flex {
+  display: flex;
+}
 body {
     background-color: variables.$primary-bg;
     color: variables.$fontColor;
