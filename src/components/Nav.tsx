@@ -1,11 +1,8 @@
-
-
-
 export default function Nav() {  
     return (
         <>
         
-       <h1>hej</h1>
+       <h1>hejd</h1>
         
         </>
     )
