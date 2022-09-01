@@ -1,0 +1,65 @@
+@use 'variables';
+@use 'buttons';
+
+.animals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+    @extend %app-size;
+    .card {
+        @include variables.flexContainer();
+        justify-content: space-evenly;
+        gap: 1em;
+        padding: 2em;
+        background-color: #e6e4e4;
+        box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
+        border-bottom-right-radius: 1em;
+        max-width: 100%;
+        h2 {
+            font-size: 3em;
+        }
+        .text-container {
+            // padding: 2em;
+            @include variables.flexContainer();
+            gap: 1em;
+            div {
+                @include variables.flexContainer(row);    
+            }
+        }
+        
+        figure {
+            width: 100%;
+            height: 250px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .card-headline {
+            @include variables.flexContainer(row);
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1em;
+            .booked {
+                background-color: #B86B6B;
+                padding: 0.3em 1em;
+                border-radius: 2em;
+                color: variables.$primary-bg;
+            }
+        }
+        
+        
+        .sub-headline {
+            font-weight: 700;
+            min-width: 30%;
+        }
+        
+        .btn-card {
+            @include buttons.button();
+            align-self: center;
+            margin: 1em 0;
+        }
+    }
+}
+
+

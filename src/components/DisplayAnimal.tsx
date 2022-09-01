@@ -1,18 +1,45 @@
 import { Animal } from '../models/animal'
 
-interface Props {
+interface DisplayAnimalProps {
 	animal: Animal;
     // handleClick : (name:any) => void;
 }
 
-const DisplayAnimal = (props: Props) => {
-    const { name, image, gender, age, species, breed, date, why, location, diseases, booked } = props.animal
-    console.log(image)
+const DisplayAnimal = (props: DisplayAnimalProps) => {
+    const { name, image, gender, age, species, breed, date, about, location, diseases, booked } = props.animal
+
     return (
-        <section className='animals'>
-            <p>{name}</p>
-            <img src={image} alt="" />
-            <p>{species}</p>
+        <section className='card'>
+            <figure style={{ backgroundImage: `url(${image})`}}></figure>
+            <section className="text-container">                
+                <div className='card-headline'>
+                    <h2>{name}</h2>
+                    {booked && <span className='booked'>Bokad</span>}
+                    <p>{date}</p>
+                </div>
+                <p>{about}</p>
+                <div>
+                    <p className='sub-headline'>Djursort : </p>
+                    <p>{species}</p>
+                </div>
+                <div>
+                    <p className='sub-headline'>Kön : </p>
+                    <p>{gender}</p>
+                </div>
+                <div>
+                    <p className='sub-headline'>Ras : </p>
+                    <p>{breed}</p>
+                </div>
+                <div>
+                    <p className='sub-headline'>Ålder : </p>
+                    <p>{age} år</p>
+                </div>
+                <div>
+                    <p className='sub-headline'>Plats : </p>
+                    <p>{location}</p>
+                </div>                
+            </section>
+            <button className='btn-card'>Läs Mer</button>
         </section>
     )
 }

@@ -1,0 +1,14 @@
+$primary-bg: #f3f3f3;
+$fontColor: #000000;
+$primary-font: 'Roboto', sans-serif;
+$header-font: 'Jost', sans-serif;
+
+%app-size {
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+@mixin flexContainer($dir: column) {
+    display: flex;
+    flex-direction: $dir;
+}

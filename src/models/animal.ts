@@ -6,7 +6,7 @@ export interface Animal {
     gender: string;
     breed: string;
     date: string;
-    why: string;
+    about: string;
     location: string;
     diseases: string;
     booked: boolean;

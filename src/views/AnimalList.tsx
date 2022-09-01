@@ -2,6 +2,7 @@ import { Animal } from '../models/animal'
 import { useState } from 'react'
 import animalList from '../animals.json'
 import DisplayAnimal from '../components/DisplayAnimal'
+import '../styles/AnimalList.scss'
 
 function AnimalList() {
     const [animals, setAnimals] = useState<Animal[]>(animalList.animals)
