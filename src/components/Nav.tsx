@@ -1,11 +1,11 @@
 
 
 
-export default function AnimalList() {  
+export default function Nav() {  
     return (
         <>
         
-       
+       <h1>hej</h1>
         
         </>
     )
