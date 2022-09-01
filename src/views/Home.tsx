@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 
-import AnimalList from '../views/AnimalList'
-import './App.scss'
+import AnimalList from './AnimalList'
+import '../App.scss';
 
 function Home() {
   
