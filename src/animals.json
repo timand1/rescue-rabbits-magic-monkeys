@@ -15,7 +15,7 @@
         },
         {
             "name": "Katt-rin",
-            "image": "./assets/harry.png",
+            "image": "../assets/harry.png",
             "gender": "Hona",
             "age": 8,
             "species": "Katt",
@@ -28,7 +28,7 @@
         },
         {
             "name": "Harry",
-            "image": "./assets/harry.png",
+            "image": "../assets/harry.png",
             "gender": "Hane",
             "age": 4,
             "species": "Häst",
@@ -41,7 +41,7 @@
         },
         {
             "name": "Doge",
-            "image": "./assets/harry.png",
+            "image": "../assets/harry.png",
             "gender": "Hane",
             "age": 5,
             "species": "Hund",
@@ -54,7 +54,7 @@
         },
         {
             "name": "Berit",
-            "image": "./assets/harry.png",
+            "image": "../assets/harry.png",
             "gender": "Hona",
             "age": 12,
             "species": "Hund",

@@ -7,7 +7,7 @@ interface Props {
 
 const DisplayAnimal = (props: Props) => {
     const { name, image, gender, age, species, breed, date, why, location, diseases, booked } = props.animal
-
+    console.log(image)
     return (
         <section className='animals'>
             <p>{name}</p>
