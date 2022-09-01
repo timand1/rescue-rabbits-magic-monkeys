@@ -1,0 +1,69 @@
+{
+    "animals": [
+        {
+            "name": "Bert",
+            "image": "../assets/harry.png",
+            "gender": "Hane",
+            "age": 2,
+            "species": "Hund",
+            "breed": "Border Collie",
+            "date": "14/03/22",
+            "why": "Inskaffades under corona pandemin. Ägaren tröttnade när det var över och kastade ut Bert på gatan.",
+            "location": "Stockholm",
+            "diseases": "none",
+            "booked": false
+        },
+        {
+            "name": "Katt-rin",
+            "image": "./assets/harry.png",
+            "gender": "Hona",
+            "age": 8,
+            "species": "Katt",
+            "breed": "Bondkatt",
+            "date": "14/10/17",
+            "why": "Sommarkatt. Hittades i skogen utanför Karlstad hösten 2017.",
+            "location": "Stockholm",
+            "diseases": "none",
+            "booked": true
+        },
+        {
+            "name": "Harry",
+            "image": "./assets/harry.png",
+            "gender": "Hane",
+            "age": 4,
+            "species": "Häst",
+            "breed": "Shetlandsponny",
+            "date": "15/02/20",
+            "why": "Spelade bort sina pengar på trav. Hemlös p.g.a. detta och söker nu ett nytt hem.",
+            "location": "Stockholm",
+            "diseases": "none",
+            "booked": false
+        },
+        {
+            "name": "Doge",
+            "image": "./assets/harry.png",
+            "gender": "Hane",
+            "age": 5,
+            "species": "Hund",
+            "breed": "Shiba",
+            "date": "24/12/18",
+            "why": "Upphittad på en lekpark i Göteborgs centrum. Okänd orsak.",
+            "location": "Göteborg",
+            "diseases": "Rabies",
+            "booked": true
+        },
+        {
+            "name": "Berit",
+            "image": "./assets/harry.png",
+            "gender": "Hona",
+            "age": 12,
+            "species": "Hund",
+            "breed": "Pitbull",
+            "date": "12/03/10",
+            "why": "Kommer från ett hem med våldsamma ägare.",
+            "location": "Göteborg",
+            "diseases": "none",
+            "booked": false
+        }
+    ]
+}

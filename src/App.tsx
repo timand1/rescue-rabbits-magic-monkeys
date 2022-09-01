@@ -2,6 +2,7 @@
 import Nav from './components/Nav'
 
 import './App.css'
+import AnimalList from './views/AnimalList'
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Nav/>
+      <AnimalList />
     </div>
   )
 }
