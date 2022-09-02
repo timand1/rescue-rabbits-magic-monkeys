@@ -55,6 +55,9 @@
 }
 
 @media only screen and (max-width: 786px) {
+    .nav{
+        justify-content: center;
+    }
    
     .nav-container{
         
@@ -64,10 +67,16 @@
     .nav-logo {
         
         transform: scale(30%);
-        display: none;
+        
     }
 
     .nav-btn{
-        font-size: .45rem;
+        font-size: .6rem;
+    }
+    .nav-left{
+        gap: 0;
+    }
+    .nav-right{
+        gap: 0;
     }
   }
