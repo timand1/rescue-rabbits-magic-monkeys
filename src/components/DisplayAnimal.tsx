@@ -1,10 +1,9 @@
 import { Animal } from '../models/animal'
+import { User } from '../models/user'
 import {useState} from 'react';
 
 interface DisplayAnimalProps {
 	animal: Animal;
-    // overlay: boolean
-    // handleOverlay : () => void;
 }
 
 const DisplayAnimal = (props: DisplayAnimalProps) => {
@@ -12,6 +11,15 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
     const [overlay, setOverlay] = useState<boolean>(false)
     const [showForm, setShowForm] = useState<boolean>(false)
+    const [user, setUser] = useState<User>(
+{       fullName: '',
+        email: '',
+        adress: '',
+        zipcode: 12345,
+        about: '',
+        extra: '',}
+
+    )
 
 
     const handleOverlay: () => void = () => {
@@ -20,6 +28,41 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
             setShowForm(false)
         }
     }
+
+
+    const handleSubmit: (e:any) => void = (e:any) => {
+        e.preventDefault();
+        // navigate to confirmed
+    }
+
+    const handleFullName: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, fullName: e.target.value}))
+    }
+
+    const handleEmail: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, email: e.target.value}))
+    }
+
+    const handleCity: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, city: e.target.value}))
+    }
+
+    const handleAdress: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, adress: e.target.value}))
+    }
+
+    const handleZipCode: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, zipcode: e.target.value}))
+    }
+
+    const handleAbout: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, about: e.target.value}))
+    }
+
+    const handleExtra: (e:any) => void = (e:any) => {
+        setUser(prevUser => ({...prevUser, extra: e.target.value}))
+    }
+
     const handleForm: () => void = () => setShowForm(!showForm);
 
     const buttonCSS : string = booked ? ' btn-booked' : ''
@@ -82,12 +125,46 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
                         </section>
                     }
                     {showForm &&
-                        <section>
-                            <h2>Form</h2>
-                            <div className='btn-close' onClick={handleOverlay}>
-                                    <div></div>
-                                    <div></div>
+                        <section className="form-container">
+                                <div className="form-header">
+                                    <h2>Form</h2>
+                                    <div className='btn-close' onClick={handleOverlay}>
+                                            <div></div>
+                                            <div></div>
+                                    </div>
                                 </div>
+                            <form onSubmit={handleSubmit}>
+                            <div className="input-container">
+                                    <label htmlFor="fullName">Namn*</label>
+                                    <input type="text" id='fullName' required onChange={(e) => handleFullName(e)}/>
+                                </div>
+                                <div className="input-container">
+                                    <label htmlFor="email">E-mail*</label>
+                                    <input type="email" id='email' required onChange={(e) => handleEmail(e)}/>
+                                </div>
+                                <div className="input-container">
+                                    <label htmlFor="city">Stad*</label>
+                                    <input type="text" id='city' required onChange={(e) => handleCity(e)}/>
+                                </div>
+                                <div className="input-container">
+                                    <label htmlFor="adress">Adress*</label>
+                                    <input type="text" id='adress' required onChange={(e) => handleAdress(e)}/>
+                                </div>
+                                <div className="input-container">
+                                    <label htmlFor="zipcode">Postnummer*</label>
+                                    <input type="number" id='zipcode' required placeholder='12345' min={10000} max={99999} onChange={(e) => handleZipCode(e)}/>
+                                </div>
+                                <div className="input-container">
+                                    <label htmlFor="about">Om dig</label>
+                                    <textarea name="text" id="about" cols={30} rows={10} onChange={(e) => handleAbout(e)}></textarea>
+                                </div>
+                                <div className="input-container">
+                                    <label htmlFor="extra">Övrig information</label>
+                                    <textarea name="text" id="extra" cols={30} rows={10} onChange={(e) => handleExtra(e)}></textarea>
+                                </div>
+                                
+                                <button type="submit"  className='btn btn-form'>Skicka</button>
+                            </form>
                         </section>
                     }                    
                 </section>
