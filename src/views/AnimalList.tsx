@@ -1,6 +1,7 @@
 import { Animal } from '../models/animal'
 import { User } from '../models/user'
 // import { useState } from 'react'
+import Search from '../components/Search'
 import animalList from '../animals.json'
 import DisplayAnimal from '../components/DisplayAnimal'
 import '../styles/AnimalList.scss'
@@ -19,9 +20,8 @@ function AnimalList(props: AnimalListProps) {
     
     return (
         <section className='animal-container'>
-            <article className='search-bar'>
-                <input type="text" placeholder='SÖK SORT, PLATS, ÅLDER ETC' />
-            </article>
+            <Search/>
+            
 
             <section className="animals">{singleAnimal}</section>
 

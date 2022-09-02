@@ -35,5 +35,21 @@
     align-items: flex-start;
     max-width: 30rem;
     margin: 3rem;
+    transition: .5s all;
 
 }
+
+@media only screen and (max-width: 786px) {
+    .hero{
+        
+    margin-top: 1.5rem;
+    }
+    .hero-article{
+        transform: scale(90%);
+        margin: 0rem;
+        
+    }
+
+   
+        
+  }
