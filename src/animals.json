@@ -64,6 +64,19 @@
             "location": "Göteborg",
             "diseases": "none",
             "booked": false
+        },
+        {
+            "name": "Berit",
+            "image": "/dog3.webp",
+            "gender": "Hona",
+            "age": 12,
+            "species": "Hund",
+            "breed": "Pitbull",
+            "date": "12/03-10",
+            "about": "Kommer från ett hem med våldsamma ägare.",
+            "location": "Göteborg",
+            "diseases": "none",
+            "booked": false
         }
     ]
 }
