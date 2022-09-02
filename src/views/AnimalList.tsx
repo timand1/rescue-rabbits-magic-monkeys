@@ -1,5 +1,6 @@
 import { Animal } from '../models/animal'
 import DisplayAnimal from '../components/DisplayAnimal'
+import Search from '../components/Search'
 import '../styles/AnimalList.scss'
 
 interface AnimalListProps {
@@ -13,9 +14,8 @@ function AnimalList(props: AnimalListProps) {
     
     return (
         <section className='animal-container'>
-            <article className='search-bar'>
-                <input type="text" placeholder='SÖK SORT, PLATS, ÅLDER ETC' />
-            </article>
+            <Search/>
+            
 
             <section className="animals">{singleAnimal}</section>
 
