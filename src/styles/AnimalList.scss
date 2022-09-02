@@ -13,8 +13,8 @@
         flex-basis: auto;
         flex-grow: 1;
         flex: 1;
-        min-width: 350px;
-        max-width: 90vw;
+        min-width: 250px;
+        max-width: 360px;
         // max-width: 540px;
         @include variables.flexContainer();
         justify-content: space-evenly;
@@ -158,18 +158,18 @@
 
 }
 
-// @media screen and (max-width: 786px) {
-//     .animals {
-//         max-width: 90%;
-//         .animal-container {
-//             width: 90%;
-//         }
-//         .form-container {
-//             width: 90%;
-//             max-height: 90%;
-//             overflow: scroll;
-//         }
-//     }
+@media screen and (max-width: 786px) {
+    .animals {
+        max-width: 90%;
+        .animal-container {
+            width: 90%;
+        }
+        .form-container {
+            width: 90%;
+            max-height: 90%;
+            overflow: scroll;
+        }
+    }
 
-// }
+}
 

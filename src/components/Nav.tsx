@@ -22,6 +22,7 @@ export default function Nav() {
                 </div>
 
                 <div className='nav-right'>
+                    <button className='nav-btn' onClick={() => navigate('#divider')}>DJUREN</button>
                     <button className='nav-btn' onClick={() => navigate('/Donate')}>DONERA</button>
                     <button className='nav-btn' onClick={() => navigate('/About')}>OM OSS</button>  
                 </div>

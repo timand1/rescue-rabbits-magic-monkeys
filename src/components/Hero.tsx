@@ -7,7 +7,7 @@ export default function Hero() {
 
 
     return (    
-        <div className='flex hero-container'>
+        <div className='hero-container'>
 
             <div className='hero'>
                 
@@ -23,7 +23,7 @@ export default function Hero() {
             </div>
             
 
-
+            <div id='divider'></div>
 
         </div>   
        
