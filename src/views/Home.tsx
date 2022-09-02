@@ -4,13 +4,23 @@ import AnimalList from './AnimalList'
 import '../App.scss';
 import '../styles/Home.scss';
 import Hero from '../components/Hero';
-function Home() {
+import { Animal } from '../models/animal'
+import { User } from '../models/user'
+
+
+interface HomeProps {
+  animals: Animal[];
+  setChosenAnimal: any;
+  setUser: any;
+}
+
+function Home(props: HomeProps) {
   
 
   return (
     <div className="home">
       <Hero/>
-      <AnimalList />
+      <AnimalList animals={props.animals} setUser={props.setUser} setChosenAnimal={props.setChosenAnimal} />
     </div>
   )
 }
