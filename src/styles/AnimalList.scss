@@ -2,8 +2,6 @@
 @use 'buttons';
 
 .animals {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -181,6 +179,21 @@
   
         }
     } 
+
+}
+
+@media screen and (max-width: 786px) {
+    .animals {
+        max-width: 90%;
+        .animal-container {
+            width: 90%;
+        }
+        .form-container {
+            width: 90%;
+            max-height: 90%;
+            overflow: scroll;
+        }
+    }
 
 }
 

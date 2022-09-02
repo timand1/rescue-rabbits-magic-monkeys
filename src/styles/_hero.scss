@@ -37,3 +37,12 @@
     margin: 3rem;
 
 }
+
+@media screen and (max-width: 786px) {
+    .hero {
+        max-width: 90%;
+    }
+    .hero-article p {
+        display: none;
+    }
+}

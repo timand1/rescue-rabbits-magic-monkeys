@@ -1,6 +1,6 @@
 import { Animal } from '../models/animal'
 import { User } from '../models/user'
-import {useState} from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface DisplayAnimalProps {
@@ -11,12 +11,11 @@ interface DisplayAnimalProps {
 
 const DisplayAnimal = (props: DisplayAnimalProps) => {
     const { name, image, gender, age, species, breed, date, about, location, diseases, booked } = props.animal
-    const {setUser} = props;
+    const {setUser, setChosenAnimal} = props;
     const navigate = useNavigate();
 
     const [overlay, setOverlay] = useState<boolean>(false)
     const [showForm, setShowForm] = useState<boolean>(false)
-    // const [user, setUser] = useState<User>({fullName: '', email: '', adress: '', zipcode: 12345, about: '', extra: '',})
 
     const handleOverlay: () => void = () => {
         setOverlay(!overlay);
@@ -25,42 +24,42 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
         }
     }
 
+    const handleForm: () => void = () => setShowForm(!showForm);
 
     const handleSubmit: (e:any) => void = (e:any) => {
         e.preventDefault();
-        props.setChosenAnimal(props.animal)
+        setChosenAnimal(props.animal)
         navigate('/confirmed')
     }
 
+    // Get user data
     const handleFullName: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, fullName: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, fullName: e.target.value}))
     }
 
     const handleEmail: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, email: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, email: e.target.value}))
     }
 
     const handleCity: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, city: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, city: e.target.value}))
     }
 
     const handleAdress: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, adress: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, adress: e.target.value}))
     }
 
     const handleZipCode: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, zipcode: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, zipcode: e.target.value}))
     }
 
     const handleAbout: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, about: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, about: e.target.value}))
     }
 
     const handleExtra: (e:any) => void = (e:any) => {
-        setUser((prevUser: any) => ({...prevUser, extra: e.target.value}))
+        setUser((prevUser: User) => ({...prevUser, extra: e.target.value}))
     }
-
-    const handleForm: () => void = () => setShowForm(!showForm);
 
     const buttonCSS : string = booked ? ' btn-booked' : ''
 
@@ -117,6 +116,10 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
                                     <p className='sub-headline'>Plats : </p>
                                     <p>{location}</p>
                                 </div>
+                                <div>
+                                    <p className='sub-headline'>Sjukdomar : </p>
+                                    <p>{diseases}</p>
+                                </div>
                                 <button className={'btn' + buttonCSS} onClick={!booked ? handleForm : undefined}> {booked ? 'Bokad' : 'Intresseanmäl' }</button>
                             </div>
                         </section>
@@ -153,11 +156,11 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
                                 </div>
                                 <div className="input-container">
                                     <label htmlFor="about">Om dig</label>
-                                    <textarea name="text" id="about" cols={30} rows={10} onChange={(e) => handleAbout(e)}></textarea>
+                                    <textarea name="text" id="about" cols={30} rows={8} onChange={(e) => handleAbout(e)}></textarea>
                                 </div>
                                 <div className="input-container">
                                     <label htmlFor="extra">Övrig information</label>
-                                    <textarea name="text" id="extra" cols={30} rows={10} onChange={(e) => handleExtra(e)}></textarea>
+                                    <textarea name="text" id="extra" cols={30} rows={8} onChange={(e) => handleExtra(e)}></textarea>
                                 </div>
                                 
                                 <button type="submit"  className='btn btn-form'>Skicka</button>
