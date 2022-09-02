@@ -1,0 +1,10 @@
+@use 'variables';
+
+.view {
+
+}
+.about {
+    margin: 0 auto;
+    @include variables.flexContainer();
+
+}
