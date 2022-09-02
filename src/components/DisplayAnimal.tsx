@@ -10,14 +10,17 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
     return (
         <section className='card'>
-            <figure style={{ backgroundImage: `url(${image})`}}></figure>
-            <section className="text-container">                
+            <figure style={{ backgroundImage: `url(${image})`}}>
+            <p>{date}</p>
+            </figure>
+            <section className="text-container">   
+
                 <div className='card-headline'>
-                    <h2>{name}</h2>
-                    {booked && <span className='booked'>Bokad</span>}
-                    <p>{date}</p>
+                    <h2>{name}</h2>    
+                    {booked && <span className='booked'>Bokad</span>} 
                 </div>
-                <p>{about}</p>
+
+                {/* <p>{about}</p> */}
                 <div>
                     <p className='sub-headline'>Djursort : </p>
                     <p>{species}</p>
