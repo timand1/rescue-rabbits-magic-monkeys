@@ -5,15 +5,20 @@
   box-sizing: border-box;
   font-family: variables.$primary-font;
 }
+body {
+  background-color: variables.$primary-bg;
+  color: variables.$fontColor;
+  font-family: variables.$primary-font;
+  height: 100%;
+}
+
 .flex {
   display: flex;
 }
+
 .App {
     height: 100vh;
     width: 100vw;
-    background-color: variables.$primary-bg;
-    color: variables.$fontColor;
-    font-family: variables.$primary-font;
     @include variables.flexContainer();
     justify-content: space-between;
 }
