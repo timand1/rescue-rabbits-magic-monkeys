@@ -1,7 +1,7 @@
 // import { useNavigate } from 'react-router-dom';
 
 
-import '../styles/_footer.scss'
+import '../styles/_search.scss'
 
 
 export default function Search() {  
@@ -10,9 +10,9 @@ export default function Search() {
 
 
     return (
-        <article className='search-bar'>
+        <div className='search-container'>
                 <input type="text" placeholder='SÖK SORT, PLATS, ÅLDER ETC' />
-            </article>
+            </div>
         
        
     )

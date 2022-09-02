@@ -84,38 +84,6 @@
     display: grid;
     place-items: center;
 
-    .btn-close {
-        position: relative;
-        margin: 1em;
-        width: 1.6em;
-        height: 1.6em;
-        border-radius: 50%;
-        background-color: #FFFFFF;
-
-        div {
-            position: absolute;
-            top: 0.2em;
-            left: 0.7em;
-            width: 3px;
-            height: 20px;
-            background-color: black;
-            transition: all 400ms;
-            cursor: pointer;
-        }
-
-        div:first-child {
-            transform: rotateZ(45deg);
-        }
-
-        div:nth-child(2) {
-            transform: rotateZ(-45deg);
-        }
-
-        &:hover div{
-            width: 4px;
-        }  
-    }
-
     .animal-container {
         width: 35vw;
         background-color: #e6e4e4;
@@ -127,6 +95,37 @@
             justify-content: space-between;
             border-top-left-radius: 1em;
             border-top-right-radius: 1em;
+            .btn-close {
+                position: relative;
+                margin: 1em;
+                width: 1.6em;
+                height: 1.6em;
+                border-radius: 50%;
+                background-color: #FFFFFF;
+        
+                div {
+                    position: absolute;
+                    top: 0.2em;
+                    left: 0.7em;
+                    width: 3px;
+                    height: 20px;
+                    background-color: black;
+                    transition: all 400ms;
+                    cursor: pointer;
+                }
+
+                div:first-child {
+                    transform: rotateZ(45deg);
+                }
+
+                div:nth-child(2) {
+                    transform: rotateZ(-45deg);
+                }
+
+                &:hover div{
+                    width: 4px;
+                }  
+            }
         }
 
         .animal-info {
@@ -156,29 +155,7 @@
                 }
             }
         }
-    }   
-    .form-container {
-        width: 35vw;
-        background-color: #e6e4e4;
-        padding: 2em;
-        box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
-        .form-header {
-            @include variables.flexContainer(row); 
-            justify-content: space-between;
-        }
-        form {
-            @include variables.flexContainer(); 
-            gap: 1em;
-        }
-        .input-container {
-            @include variables.flexContainer();  
-        }
-        button {
-            @include buttons.button(#5BD77E, #FFFFFF);
-            align-self: center;
-  
-        }
-    } 
+    }    
 
 }
 
