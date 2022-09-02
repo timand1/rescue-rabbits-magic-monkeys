@@ -26,6 +26,16 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+            transition: .5s all;
         }
     }
 }
+
+@media only screen and (max-width: 786px) {
+    section figure{
+        transform: scale(40%);
+
+    }
+
+   
+    }
