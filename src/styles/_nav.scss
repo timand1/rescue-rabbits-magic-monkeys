@@ -42,7 +42,25 @@
     @include variables.flexContainer(row);
     @include buttons.nav-btn();
 }
+.search-form{    
+    @include variables.flexContainer();
+    width: 25rem;
+    height: 2.5rem;
+    border-radius: 40px;
+    border: solid 1px cadetblue;
+    padding-left: 1rem;
+    font-size: 1rem;
+    transition: 1s all;
+}
+@media only screen and (max-width: 786px) {
+    .search-form{
+        width: 9rem;
+        
+    }
+    
 
+    
+  }
 
 @media only screen and (max-width: 786px) {
     .nav{

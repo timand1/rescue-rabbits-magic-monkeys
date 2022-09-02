@@ -17,7 +17,9 @@ export default function Nav() {
                 <div className='nav-middle'>
                     <button className='nav-btn' onClick={() => navigate('/')}><h1>HEM</h1></button>
                 </div>
-                <div className='nav-fill'></div>
+                <div className='nav-fill'>
+                    
+                </div>
 
                 <div className='nav-right'>
                     <button className='nav-btn' onClick={() => navigate('/Donate')}><h1>DONERA</h1></button>

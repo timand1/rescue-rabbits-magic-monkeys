@@ -1,10 +1,7 @@
 
 @use 'variables';
 @use 'buttons';
-.hero-container{
-    margin-bottom: 1.5em;
-    
-}
+
 .hero{
     
     @include variables.flexContainer();
@@ -12,8 +9,8 @@
     min-width: 70vw;   
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 1.5em;
-    margin-top: 1.5rem;
+    padding: 1.5em;  
+    margin-bottom: 1.5em;  
     background-color: #e6e4e4;
     box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
         border-bottom-right-radius: 1em;
@@ -40,9 +37,9 @@
 }
 
 @media screen and (max-width: 786px) {
-    .hero {
-        max-width: 90%;
-    }
+    // .hero {
+    //     max-width: 90%;
+    // }
     .hero-article p {
         display: none;
     }
