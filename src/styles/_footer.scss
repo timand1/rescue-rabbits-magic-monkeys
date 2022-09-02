@@ -10,10 +10,45 @@
     justify-content: center;
     align-items: center ;
     text-align: center;
+    
    
    
 }
 
-.footer{
-    gap: 3rem;
+
+.q{
+    background-color: bisque;
 }
+
+.footer{
+    transition: .1s all;
+    
+    gap: 2rem;
+}
+
+
+.footer-header{
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+}
+.footer-info{
+    font-size: .8rem;
+}
+
+
+
+@media only screen and (max-width: 786px) {
+    .footer{
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .footer h2{
+        transition: .1s all;
+        transform: scale(60%);
+    }
+    .footer p{
+        display: none;
+    }   
+    
+  }
