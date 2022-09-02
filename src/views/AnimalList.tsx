@@ -13,11 +13,12 @@ function AnimalList(props: AnimalListProps) {
     const singleAnimal = props.animals.map((animal, index) => <DisplayAnimal setUser={props.setUser} animal={animal} key={index} setChosenAnimal={props.setChosenAnimal} />)
     
     return (
-        <section className='animal-container'>
-            <Search/>
-            
+        <section className='animal-container'>                      
 
-            <section className="animals">{singleAnimal}</section>
+            <section className="animals">
+                <Search/> 
+                {singleAnimal}
+            </section>
 
         </section>
     )
