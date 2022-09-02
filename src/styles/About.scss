@@ -1,13 +1,12 @@
 @use 'variables';
 
-
-    .about {
-        max-width: 35rem;
-        width: 100%;
-        margin: 0 auto;
-        @include variables.flexContainer();
-        align-items: center;
-        justify-content: center;
-        
+.about {
+    max-width: 35rem;
+    width: 100%;
+    margin: 0 auto;
+    @include variables.flexContainer();
+    align-items: center;
+    justify-content: center;
     
-    }
+
+}

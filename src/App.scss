@@ -14,6 +14,8 @@
     background-color: variables.$primary-bg;
     color: variables.$fontColor;
     font-family: variables.$primary-font;
+    @include variables.flexContainer();
+    justify-content: space-between;
 }
 
 h1, h2, h3 {
