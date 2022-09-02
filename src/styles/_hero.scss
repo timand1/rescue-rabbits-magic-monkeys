@@ -1,0 +1,25 @@
+@use '/src/styles/variables';
+.hero-container{
+    margin-bottom: 1.5em;
+    
+}
+.hero{
+    @extend %app-size; 
+    min-width: 70vw;   
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1.5em;
+    background-color: #e6e4e4;
+    box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
+        border-bottom-right-radius: 1em;
+}
+.hero-fig{
+    
+    width: 70vw;
+    height: 25rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;  
+    justify-content: center;    
+    align-items: center;
+}
