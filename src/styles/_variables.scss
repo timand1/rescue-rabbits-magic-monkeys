@@ -14,3 +14,12 @@ $header-font: 'Jost', sans-serif;
     flex-direction: $dir;
 }
 
+@mixin textContainer() {
+    height: 100%;
+    background-color: $secondary-bg;
+    padding: 5rem;
+    font-family: $primary-font;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
