@@ -37,10 +37,10 @@
 }
 
 @media screen and (max-width: 786px) {
-    // .hero {
-    //     max-width: 90%;
-    // }
-    // .hero-article p {
-    //     display: none;
-    // }
+    .hero {
+        text-align: center;
+    }
+    .hero-article p {
+        display: none;
+    }
 }
