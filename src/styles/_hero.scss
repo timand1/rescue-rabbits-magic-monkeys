@@ -1,26 +1,39 @@
-@use '/src/styles/variables';
+
+@use 'variables';
+@use 'buttons';
 .hero-container{
     margin-bottom: 1.5em;
     
 }
 .hero{
+    
+    @include variables.flexContainer();
     @extend %app-size; 
     min-width: 70vw;   
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1.5em;
+    margin-top: 1.5rem;
     background-color: #e6e4e4;
     box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
         border-bottom-right-radius: 1em;
 }
 .hero-fig{
+    @include variables.flexContainer();
     
-    width: 70vw;
+    width: 100%;
     height: 25rem;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;  
-    justify-content: center;    
-    align-items: center;
-    text-align: center;  
+    
+    
+}
+.hero-article{
+    
+    @include variables.flexContainer();
+    align-items: flex-start;
+    max-width: 30rem;
+    margin: 3rem;
+
 }

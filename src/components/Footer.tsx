@@ -13,19 +13,19 @@ export default function Footer() {
     return (
         <footer className=' flex footer-container'>
             <div className='flex footer'>
-                <div>
-                    <h2>Djurskyddet</h2>
-                    <p>Djurberget, Djurskyddsvägen 15B </p>
+                <div className='footer-box'>
+                    <h2 className='footer-header '>Djurskyddet</h2>
+                    <p className='footer-info'>Djurberget, Djurskyddsvägen 15B </p>
                 </div>
-                <div>
-                    <h2>Kontakta oss</h2>
-                    <p>FAQ - Frågor och svar</p>
-                    <p>Kundservice</p>
+                <div className='footer-box'>
+                    <h2 className='footer-header'>Kontakta oss</h2>
+                    <p className='footer-info'>FAQ - Frågor och svar</p>
+                    <p className='footer-info'>Kundservice</p>
                 </div>
-                <div>
-                    <h2>Om Rescue Rabbits</h2>
-                    <p>Varför Rescue Rabbits?</p>
-                    <p>Nyheter</p>
+                <div className='footer-box'>
+                    <h2 className='footer-header'>Om Rescue Rabbits</h2>
+                    <p className='footer-info'>Varför Rescue Rabbits?</p>
+                    <p className='footer-info'>Nyheter</p>
                 </div>
 
                 

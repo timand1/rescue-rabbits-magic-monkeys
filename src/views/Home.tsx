@@ -2,13 +2,13 @@
 
 import AnimalList from './AnimalList'
 import '../App.scss';
+import '../styles/Home.scss';
 import Hero from '../components/Hero';
 function Home() {
   
 
   return (
-    <div className="Home">
-      {/* router */}
+    <div className="home">
       <Hero/>
       <AnimalList />
     </div>

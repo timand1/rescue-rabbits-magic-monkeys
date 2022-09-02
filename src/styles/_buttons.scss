@@ -1,3 +1,4 @@
+@use 'variables';
 @use "sass:color";
 
 @mixin button($bg: #37295C, $text-color: #FFFFFF) {
@@ -5,15 +6,27 @@
     background-color: $bg;
     color: $text-color;
     border-radius: 3em;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 500;
-    padding: 0.8em;
-    min-width: 180px;
+    padding: 0.8em 5em;
     box-shadow: 3px 4px 0px rgba(0, 0, 0, 0.34);
     transition: all 400ms;
+    font-family: variables.$primary-font;
     &:hover {
         cursor: pointer;
 		transform: scale(105%);
         background: color.scale($bg, $lightness: 30%);
     }
+}
+
+@mixin nav-btn(){    
+	background: none;
+    color: white;
+	font-size: 14px;	
+	border: none;
+	transition: .1s all;
+	cursor: pointer;
+	&:hover {
+		transform: scale(110%);
+	}
 }
