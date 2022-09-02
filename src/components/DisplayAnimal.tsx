@@ -1,26 +1,22 @@
 import { Animal } from '../models/animal'
 import { User } from '../models/user'
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface DisplayAnimalProps {
 	animal: Animal;
+    setChosenAnimal: any;
+    setUser: any;
 }
 
 const DisplayAnimal = (props: DisplayAnimalProps) => {
     const { name, image, gender, age, species, breed, date, about, location, diseases, booked } = props.animal
+    const {setUser} = props;
+    const navigate = useNavigate();
 
     const [overlay, setOverlay] = useState<boolean>(false)
     const [showForm, setShowForm] = useState<boolean>(false)
-    const [user, setUser] = useState<User>(
-{       fullName: '',
-        email: '',
-        adress: '',
-        zipcode: 12345,
-        about: '',
-        extra: '',}
-
-    )
-
+    // const [user, setUser] = useState<User>({fullName: '', email: '', adress: '', zipcode: 12345, about: '', extra: '',})
 
     const handleOverlay: () => void = () => {
         setOverlay(!overlay);
@@ -32,35 +28,36 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
     const handleSubmit: (e:any) => void = (e:any) => {
         e.preventDefault();
-        // navigate to confirmed
+        props.setChosenAnimal(props.animal)
+        navigate('/confirmed')
     }
 
     const handleFullName: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, fullName: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, fullName: e.target.value}))
     }
 
     const handleEmail: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, email: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, email: e.target.value}))
     }
 
     const handleCity: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, city: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, city: e.target.value}))
     }
 
     const handleAdress: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, adress: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, adress: e.target.value}))
     }
 
     const handleZipCode: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, zipcode: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, zipcode: e.target.value}))
     }
 
     const handleAbout: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, about: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, about: e.target.value}))
     }
 
     const handleExtra: (e:any) => void = (e:any) => {
-        setUser(prevUser => ({...prevUser, extra: e.target.value}))
+        setUser((prevUser: any) => ({...prevUser, extra: e.target.value}))
     }
 
     const handleForm: () => void = () => setShowForm(!showForm);
