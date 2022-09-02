@@ -1,0 +1,10 @@
+@use 'variables';
+@use 'buttons';
+
+.search-container{
+    @include variables.flexContainer();
+    
+    width: 70vw;
+    height: 2rem;
+    background-color: black;
+}
