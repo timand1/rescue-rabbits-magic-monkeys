@@ -15,15 +15,15 @@ export default function Nav() {
                 </div>
 
                 <div className='nav-middle'>
-                    <button className='nav-btn' onClick={() => navigate('/')}><h1>HEM</h1></button>
+                    <button className='nav-btn' onClick={() => navigate('/')}>HEM</button>
                 </div>
                 <div className='nav-fill'>
                     
                 </div>
 
                 <div className='nav-right'>
-                    <button className='nav-btn' onClick={() => navigate('/Donate')}><h1>DONERA</h1></button>
-                    <button className='nav-btn' onClick={() => navigate('/About')}><h1>OM OSS</h1></button>  
+                    <button className='nav-btn' onClick={() => navigate('/Donate')}>DONERA</button>
+                    <button className='nav-btn' onClick={() => navigate('/About')}>OM OSS</button>  
                 </div>
             </nav>                       
         </div>

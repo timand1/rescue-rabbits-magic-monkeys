@@ -6,6 +6,7 @@
     @include variables.flexContainer(row);
     height: 5em;
     background-color: black;
+    margin-bottom: 1.5em;
 }
 
 .nav-logo {
@@ -78,7 +79,7 @@
     }
 
     .nav-btn{        
-        font-size: .6rem;
+        font-size: 1.3rem;
     }
     .nav-left{
         transform: scale(0%);

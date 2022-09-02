@@ -12,7 +12,7 @@
     width: 90vw;
     height: 5rem;
     background-color: rgb(207, 207, 207);
-    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.137);
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.356);
     
 }
 
@@ -24,7 +24,7 @@
     border: none;
     padding-left: 1rem;
     font-size: 1rem;
-    transition: 1s all;
+    transition: .2s all;
 }
 .search-btn{
     @include buttons.search-btn();

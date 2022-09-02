@@ -20,9 +20,11 @@
 }
 
 @mixin nav-btn(){    
+    font-family: variables.$primary-font;
+    font-weight: 100;
 	background: none;
     color: white;
-	font-size: 14px;	
+	font-size: 2.5rem;	
 	border: none;
 	transition: .1s all;
 	cursor: pointer;
@@ -36,6 +38,7 @@
     width: 5rem;
     border-radius: 0px 5px 5px 0px;
     background-color: rgb(231, 205, 117);
+    font-family: variables.$primary-font;
     &:hover {
         cursor: pointer;
 		

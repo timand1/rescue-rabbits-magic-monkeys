@@ -12,8 +12,8 @@
     padding: 1.5em;  
     margin-bottom: 1.5em;  
     background-color: #e6e4e4;
-    box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
-        border-bottom-right-radius: 1em;
+    background-color: rgb(207, 207, 207);
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.356);
 }
 .hero-fig{
     @include variables.flexContainer();
@@ -40,7 +40,7 @@
     // .hero {
     //     max-width: 90%;
     // }
-    .hero-article p {
-        display: none;
-    }
+    // .hero-article p {
+    //     display: none;
+    // }
 }
