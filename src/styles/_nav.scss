@@ -12,9 +12,7 @@
     transition: .1s all;
     min-height: 5em; 
     min-width: 5em;    
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;   
+    @extend %bg-image; 
 }
 
 .nav-fill{

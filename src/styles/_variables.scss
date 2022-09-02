@@ -9,6 +9,12 @@ $header-font: 'Jost', sans-serif;
     margin: 0 auto;
 }
 
+%bg-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @mixin flexContainer($dir: column) {
     display: flex;
     flex-direction: $dir;
@@ -34,4 +40,6 @@ $header-font: 'Jost', sans-serif;
             background-repeat: no-repeat;
         }
 }
+
+
 

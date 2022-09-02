@@ -26,9 +26,7 @@
         figure {
             width: 100%;
             height: 250px;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            @extend %bg-image;
             @include variables.flexContainer();
             justify-content: flex-end;
             align-items: flex-end;
