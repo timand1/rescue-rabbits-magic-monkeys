@@ -9,8 +9,5 @@
         align-items: center;
         justify-content: center;
         
-        section {
-            @include variables.text-container();
-        }
     
     }
