@@ -18,3 +18,15 @@
         background: color.scale($bg, $lightness: 30%);
     }
 }
+
+@mixin nav-btn(){    
+	background: none;
+    color: white;
+	font-size: 14px;	
+	border: none;
+	transition: .1s all;
+	cursor: pointer;
+	&:hover {
+		transform: scale(110%);
+	}
+}

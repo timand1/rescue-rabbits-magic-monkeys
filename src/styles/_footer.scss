@@ -1,7 +1,6 @@
 @use 'variables';
-.footer-container{
-    
-
+.footer-container{    
+    padding: 5rem 0 5rem 0;
     width: 100vw;
     height: 8rem;
     background-color: rgb(0, 0, 0);
@@ -9,23 +8,13 @@
     @include variables.flexContainer();
     justify-content: center;
     align-items: center ;
-    text-align: center;
-    
-   
-   
-}
-
-
-.q{
-    background-color: bisque;
+    text-align: center;       
 }
 
 .footer{
-    transition: .1s all;
-    
+    transition: .1s all;    
     gap: 2rem;
 }
-
 
 .footer-header{
     font-size: 1.3rem;
@@ -35,20 +24,16 @@
     font-size: .8rem;
 }
 
-
-
 @media only screen and (max-width: 786px) {
     .footer{
         flex-direction: column;
         gap: 0;
-    }
-    
+    }    
     .footer h2{
         transition: .1s all;
         transform: scale(80%);
     }
     .footer p{
         display: none;
-    }   
-    
+    }       
   }
