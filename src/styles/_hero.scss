@@ -4,6 +4,7 @@
 
 .hero{
     
+    
     @include variables.flexContainer();
     @extend %app-size; 
     min-width: 70vw;   
@@ -45,6 +46,7 @@
 
 @media screen and (max-width: 786px) {
     .hero {
+        margin-top: 5rem;
         text-align: center;
         .hero-article {
             height: 100%;

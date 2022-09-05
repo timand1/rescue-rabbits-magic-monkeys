@@ -32,7 +32,7 @@ export default function Nav() {
                     </button>
                 </div>
                 {!showMenu &&
-                <div className='nav-right' id='myLinks'>
+                <div className='nav-right'>
                     <button className='nav-btn' onClick={() => navigate('/')}>HEM</button>
                     <div className='nav-fill'></div>              
                     <button className='nav-btn' onClick={() => scrollTo()}>VÅRA DJUR</button>

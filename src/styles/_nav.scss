@@ -3,10 +3,12 @@
 @use "sass:color";
 
 .nav-container{
-    // @include variables.flexContainer(row);
+    @include variables.flexContainer(row);
+    justify-content: center;
     max-height: 5em;
     background-color: black;
     margin-bottom: 1.5em;
+    width: 100vw;
 }
 
 .nav-logo {
@@ -16,21 +18,26 @@
     @extend %bg-image; 
 }
 .nav{    
+    width: 70vw;
     display: flex;
     align-items: center;
-    @extend %app-size; 
+    justify-content: center;
+     
+    
       
 }
-
+// .nav-left{
+//     min-height: 5em; 
+//     min-width: 5em;  
+// }
 .nav-right{
     display: flex;
-    width: 100rem; 
+    width: 100vw; 
     gap: 1rem;        
 }
 
 .nav-fill{
-    display: flex;
-    height: 5rem;
+    display: flex;    
     flex: 2;     
 }
 
@@ -52,15 +59,17 @@
     transition: 1s all;
 }
 .mobile-container{
+
+    
    display: none;
 }
 .mobile-menu-btn{
-    margin-right: 2rem;
+    
     @include variables.flexContainer();
     justify-content: center;
     align-items: center;
-    height: 3rem;
-    width: 3rem;
+    transition: .1s all;
+     
     background-color: black;   
     gap: 5px;
     border: none;
@@ -83,28 +92,41 @@
 
 @media only screen and (max-width: 786px) {
     .mobile-container{
-        display: block;
+        margin-right: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
      }
-    .nav{        
-          
-        height: 3rem;  
-        justify-content: space-between;    
+     
+     .nav-container{
+        width: 100vw;
+        position: fixed;
+        z-index: 1000;
+     }
+    .nav{   
+       
+        width: 100vw;
+        justify-content: space-between;
+        height: 3rem;
+           
+        
     }
    .nav-fill{
     display: none;
    }
-    .nav-left{
+    .nav-logo{
         transform: scale(50%);           
-        margin-left: 1em;     
+            
     }
     .nav-right{   
         background-color: rgb(22, 22, 22);   
         flex-direction: column;  
-        position: absolute;
-        width: 100%;
+        position: absolute;        
         top: 3rem;
         left: 0;
         padding: 2rem;
+        z-index: 1000;
         
     }    
    
