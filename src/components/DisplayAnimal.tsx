@@ -74,12 +74,15 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
                     <h2>{name}</h2>    
                     {booked && <span className='booked'>Bokad</span>} 
                 </div>
-                <ul className='info-container'>
-                    <li>{species}</li>
-                    <li>{age} år</li>
-                    <li>{gender}</li>
-                    <li>{location}</li>
-                </ul>
+                <div className='info-container'>
+                    <p>{species}</p>
+                    <div className="dot"></div>
+                    <p>{age} år</p>
+                    <div className="dot"></div>
+                    <p>{gender}</p>
+                    <div className="dot"></div>
+                    <p>{location}</p>
+                </div>
             <button className='btn-card' onClick={handleOverlay}>Läs Mer</button>
             </section>
             {overlay && 
