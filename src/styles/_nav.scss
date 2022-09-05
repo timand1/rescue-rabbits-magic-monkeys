@@ -3,7 +3,7 @@
 @use "sass:color";
 
 .nav-container{
-    @include variables.flexContainer(row);
+    // @include variables.flexContainer(row);
     height: 5em;
     background-color: black;
     margin-bottom: 1.5em;
@@ -16,24 +16,29 @@
     @extend %bg-image; 
 }
 
-.nav-fill{
-    @include variables.flexContainer(row);
-    flex: 1;
-}
+// .nav-fill{
+//     @include variables.flexContainer(row);
+//     flex: 1;
+// }
 .nav{    
     @include variables.flexContainer(row);
     @extend %app-size; 
-    min-width: 70vw;   
+    justify-content: space-between;
+    align-items: center;
+    // min-width: 70vw;   
+    
     
       
 }
+
+
 .nav-left, .nav-middle{
-    @include variables.flexContainer(row); 
+    // @include variables.flexContainer(row); 
 }
 .nav-right{
     @include variables.flexContainer(row); 
     gap: 2rem;
-    
+    margin-left: auto;    
 }
 .nav-btn{
     min-width: 5rem;
@@ -63,7 +68,7 @@
 
 @media only screen and (max-width: 786px) {
     .nav{
-        padding: 0 2rem 0 2rem;
+        padding: 1em 0;
         min-width: 100vw;        
     }
 
@@ -81,10 +86,18 @@
     }
     .nav-left{
         transform: scale(0%);
-        width: 0px;        
+        width: 0px;   
+        margin-left: 1em;     
     }
     .nav-right{
         gap: 1rem;
+        margin-right: 1em;
     }
-    
+    .nav-logo {
+        display: none;
+    }
+    .nav-btn {
+        font-size: 1em;
+    }
+
   }

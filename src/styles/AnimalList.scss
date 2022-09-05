@@ -50,6 +50,14 @@
             .info-container {
                 @include variables.flexContainer(row);
                 justify-content: space-between;
+                align-items: center;
+                
+                .dot {
+                    width: 0.4em;
+                    height: 0.4em;
+                    border-radius: 50%;
+                    background-color: #000;
+                }
             }
         }       
         

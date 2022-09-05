@@ -17,12 +17,12 @@ export default function Nav() {
                 <div className='nav-middle'>
                     <button className='nav-btn' onClick={() => navigate('/')}>HEM</button>
                 </div>
-                <div className='nav-fill'>
+                {/* <div className='nav-fill'>
                     
-                </div>
+                </div> */}
 
                 <div className='nav-right'>
-                    <button className='nav-btn' onClick={() => navigate('#divider')}>DJUREN</button>
+                    <button className='nav-btn' onClick={() => scrollTo()}>DJUREN</button>
                     <button className='nav-btn' onClick={() => navigate('/Donate')}>DONERA</button>
                     <button className='nav-btn' onClick={() => navigate('/About')}>OM OSS</button>  
                 </div>
