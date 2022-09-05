@@ -7,16 +7,17 @@
     @include variables.flexContainer();
     align-items: center;
    
-    h1 {
-        font-size: 2.5em;
+    h2 {
+        font-size: 2em;
         margin: 1rem;
     }
     
     section {
         @include variables.textContainer;
         img {
-            max-width: 50%;
+            max-width: 100%;
         }
+        padding: 2rem;
         position: relative;
         figure {
             position: absolute;
@@ -31,9 +32,9 @@
     }
 }
 
-// @media only screen and (max-width: 786px) {
-//     section figure{
-//         // transform: scale(40%);
+@media only screen and (max-width: 786px) {
+    section figure{
+        transform: scale(40%);
 
-//     }
-//     }
+    }
+ }
