@@ -84,11 +84,7 @@
     border-radius: 16px;
 }
 
-@media only screen and (max-width: 786px) {
-    .search-form{
-        width: 9rem;        
-    }      
-  }
+
 
 @media only screen and (max-width: 786px) {
     .mobile-container{
@@ -120,6 +116,7 @@
             
     }
     .nav-right{   
+        
         background-color: rgb(22, 22, 22);   
         flex-direction: column;  
         position: absolute;        
@@ -128,6 +125,10 @@
         padding: 2rem;
         z-index: 1000;
         
-    }    
+    }  
+    
+    .search-form{
+        width: 9rem;        
+    } 
    
   }
