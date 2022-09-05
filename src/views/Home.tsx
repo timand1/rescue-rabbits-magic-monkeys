@@ -3,7 +3,7 @@ import '../App.scss';
 import '../styles/Home.scss';
 import Hero from '../components/Hero';
 import { Animal } from '../models/animal'
-import { useState } from 'react';
+
 interface HomeProps {
   animals: Animal[];
   setAnimals: any;

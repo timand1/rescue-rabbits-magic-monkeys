@@ -13,13 +13,16 @@ export default function Search(props: SearchProps) {
 
     const handleSearch: (e:any) => void = (e:any) => {
         setSearchInput(e.target.value)
+        if(e.key === 'Enter' && searchInput.length >= 1) {
+            props.searchAnimals(searchInput)
+        }
     }
 
     return (
         <div className='search-container'>
             <div className='search'>
                 <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' onKeyUp={(e) => {handleSearch(e)}} />
-                <button className='search-btn' onClick={() => props.searchAnimals(searchInput)}>SÖK</button>
+                <button className='search-btn' onClick={(e) => props.searchAnimals(searchInput)}>SÖK</button>
             </div>
 
             

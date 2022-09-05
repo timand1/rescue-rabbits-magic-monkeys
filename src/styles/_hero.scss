@@ -11,6 +11,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1.5em;  
+    margin-top: 8em;
     margin-bottom: 1.5em;  
     background-color: #e6e4e4;
     background-color: rgb(207, 207, 207);
@@ -46,7 +47,6 @@
 
 @media screen and (max-width: 786px) {
     .hero {
-        margin-top: 5rem;
         text-align: center;
         .hero-article {
             height: 100%;
