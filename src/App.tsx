@@ -25,7 +25,7 @@ function App() {
       <Nav />
       <Routes>
 
-        <Route path='/' element={ <Home animals={animals} setUser={setUser} setChosenAnimal={setChosenAnimal} /> } />
+        <Route path='/' element={ <Home animals={animals} setAnimals={setAnimals} setUser={setUser} setChosenAnimal={setChosenAnimal} /> } />
         <Route path='/About' element={ <About /> } />
         <Route path='/Confirmed' element={ <Confirmed chosenAnimal={chosenAnimal} user={user} /> } />
 
