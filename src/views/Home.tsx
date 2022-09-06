@@ -3,12 +3,13 @@ import '../App.scss';
 import '../styles/Home.scss';
 import Hero from '../components/Hero';
 import { Animal } from '../models/animal'
+import { User } from '../models/user'
 
 interface HomeProps {
   animals: Animal[];
-  setAnimals: any;
-  setChosenAnimal: any;
-  setUser: any;
+  setAnimals: (setAnimals: Animal[]) => void;
+  setChosenAnimal: (chosenAnimal: Animal) => void;
+  setUser: (user: User) => void;
 }
 
 function Home(props: HomeProps) { 

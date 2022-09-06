@@ -2,7 +2,7 @@ export interface Animal {
 	name: string;
     image: string;
 	species: string;
-    age: number;
+    age: string;
     gender: string;
     breed: string;
     date: string;

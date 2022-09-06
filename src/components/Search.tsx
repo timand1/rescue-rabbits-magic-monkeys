@@ -12,7 +12,8 @@ export default function Search(props: SearchProps) {
     const [searchInput, setSearchInput] = useState<string>('')
 
     const handleSearch: (e:any) => void = (e:any) => {
-        setSearchInput(e.target.value)
+        const value : string = e.target.value
+        setSearchInput(value)
         if(e.key === 'Enter' && searchInput.length >= 1) {
             props.searchAnimals(searchInput)
         }

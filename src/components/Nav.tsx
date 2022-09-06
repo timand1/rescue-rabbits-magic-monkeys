@@ -18,12 +18,14 @@ export default function Nav() {
     }
 
     const handleHome: () => void = () => {
+        setMenuOpen(false)
         const root:any = document.querySelector('#root')
         root.scrollIntoView({
             behavior: 'smooth'
           });
     }
    const scrollToAnimals: () => void = () => {
+    setMenuOpen(false)
     setTimeout(() => {
         const divider:any = document.querySelector('#divider')
         divider.scrollIntoView({
@@ -41,7 +43,7 @@ export default function Nav() {
             behavior: 'smooth'
           });
     }
-    
+
     return (         
         <header>                
             <div className="logo-container">
