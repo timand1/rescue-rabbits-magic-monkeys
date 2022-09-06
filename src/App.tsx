@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav />
+      <Nav setAnimals={setAnimals} />
       <Routes>
         <Route path='/' element={ <Home animals={animals} setAnimals={setAnimals} setUser={setUser} setChosenAnimal={setChosenAnimal} /> } />
         <Route path='/About' element={ <About /> } />
