@@ -28,7 +28,7 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
     const handleSubmit: (e:any) => void = (e:any) => {
         e.preventDefault();
-        setChosenAnimal(props.animal)
+        setChosenAnimal(props.animal.booked = true)
         navigate('/confirmed')
     }
 

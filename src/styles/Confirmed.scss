@@ -6,6 +6,7 @@
     margin: 0 auto;
     @include variables.flexContainer();
     align-items: center;
+    justify-content: center;
    
     h2 {
         font-size: 2em;
@@ -33,7 +34,7 @@
 }
 
 @media only screen and (max-width: 786px) {
-    section figure{
+    .about figure, .confirmed figure{
         transform: scale(40%);
 
     }
