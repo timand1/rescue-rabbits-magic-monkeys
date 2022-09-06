@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface DisplayAnimalProps {
 	animal: Animal;
-    setChosenAnimal: any;
+    setChosenAnimal: (chosenAnimal: Animal) => void;
     setUser: any;
 }
 

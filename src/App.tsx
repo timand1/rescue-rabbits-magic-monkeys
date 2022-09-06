@@ -15,7 +15,7 @@ import { User } from './models/user'
 
 
 function App() {  
-  const allAnimals = animalList.animals
+  const allAnimals:Array<Animal> = animalList.animals
   const [chosenAnimal, setChosenAnimal] = useState<Animal>(allAnimals[1])
   const [animals, setAnimals] = useState<Animal[]>(allAnimals)
   const [user, setUser] = useState<User>({fullName: '', email: '', adress: '', zipcode: 12345, about: '', extra: ''})
@@ -24,11 +24,9 @@ function App() {
     <div className="App">
       <Nav />
       <Routes>
-
         <Route path='/' element={ <Home animals={animals} setAnimals={setAnimals} setUser={setUser} setChosenAnimal={setChosenAnimal} /> } />
         <Route path='/About' element={ <About /> } />
         <Route path='/Confirmed' element={ <Confirmed chosenAnimal={chosenAnimal} user={user} /> } />
-
       </Routes>
       <Footer />
     </div>
