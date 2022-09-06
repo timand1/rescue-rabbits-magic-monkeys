@@ -74,10 +74,15 @@ function AnimalList(props: AnimalListProps) {
         props.setAnimals(filteredSearch) 
         }   
     }
+
+     const showAll: () => void = () => {
+        props.setAnimals(animalList.animals) 
+     }
+
     
     return (
         <section className='animal-container'>                      
-
+<button onClick={showAll}>ALLA DJUR</button>
             <section className="animals">
                 <Search searchAnimals={searchAnimals} /> 
                 {singleAnimal}

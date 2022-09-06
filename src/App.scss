@@ -22,6 +22,7 @@ body {
     overflow-x: hidden;
     @include variables.flexContainer();
     justify-content: space-between;
+    margin-top: 8em;
 }
 
 h1, h2, h3 {

@@ -1,10 +1,16 @@
 import { useNavigate, NavLink } from 'react-router-dom';
 import logo from '../assets/LOGO.png'
 import { useState } from 'react';
+import {Animal} from '../models/animal'
+import animalList from '../animals.json'
 
 import '../styles/_navNew.scss'
 
-export default function Nav() { 
+interface NavProps {
+    setAnimals: (animal: Animal[]) => void;
+}
+
+export default function Nav(props: NavProps) { 
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
@@ -14,10 +20,12 @@ export default function Nav() {
     }
 
     const changeUrl: () => void = () => {
+        showAll()
         setMenuOpen(false)
     }
 
     const handleHome: () => void = () => {
+        showAll()
         setMenuOpen(false)
         const root:any = document.querySelector('#root')
         root.scrollIntoView({
@@ -37,12 +45,17 @@ export default function Nav() {
 
     const handleLogo: () => void = () => {
         setMenuOpen(false)
+        showAll()
         navigate('/')
         const root:any = document.querySelector('#root')
         root.scrollIntoView({
             behavior: 'smooth'
           });
     }
+
+    const showAll: () => void = () => {
+        props.setAnimals(animalList.animals) 
+     }
 
     return (         
         <header>                
