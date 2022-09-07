@@ -1,13 +1,13 @@
 import { useNavigate, NavLink } from 'react-router-dom';
 import logo from '../assets/LOGO.png'
 import { useState } from 'react';
-import {Animal} from '../models/data'
-import data from '../data/data.json'
-import '../styles/_navNew.scss'
+import {Animal} from '../models/data';
+import data from '../data/data.json';
+import '../styles/_navNew.scss';
 
 interface NavProps {
     setAnimals: (animal: Animal[]) => void;
-}
+};
 
 export default function Nav(props: NavProps) { 
     const navigate = useNavigate();
@@ -15,36 +15,36 @@ export default function Nav(props: NavProps) {
 
     const handleMenu: () => void = () => {
         setMenuOpen(!menuOpen);       
-    }
+    };
 
     const changeUrl: () => void = () => {
         showAll()
         setMenuOpen(false)
-    }
+    };
 
     const handleHome: () => void = () => {
-        showAll()
-        navigate('/')
-        setMenuOpen(false)
-        const root:any = document.querySelector('#root')
+        showAll();
+        navigate('/');
+        setMenuOpen(false);
+        const root:any = document.querySelector('#root');
         root.scrollIntoView({
             behavior: 'smooth'
           });
-    }
+    };
 
    const scrollToAnimals: () => void = () => {
-        setMenuOpen(false)
+        setMenuOpen(false);
         setTimeout(() => {
-            const divider:any = document.querySelector('#divider')
+            const divider:any = document.querySelector('#divider');
             divider.scrollIntoView({
                 behavior: 'smooth'
                 });
         }, 100);       
-    }
+    };
 
     const showAll: () => void = () => {
-        props.setAnimals(data.animals) 
-    }
+        props.setAnimals(data.animals);
+    };
 
     return (         
         <header>                
@@ -66,6 +66,6 @@ export default function Nav(props: NavProps) {
             </nav>      
         </header>
     )
-}
+};
 
 

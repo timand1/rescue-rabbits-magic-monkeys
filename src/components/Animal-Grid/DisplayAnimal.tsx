@@ -1,7 +1,7 @@
-import { Animal, Adopted, User } from '../../models/data'
+import { Animal, Adopted, User } from '../../models/data';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Overlay from '../Overlay-Animal/Overlay'
+import Overlay from '../Overlay-Animal/Overlay';
 
 interface DisplayAnimalProps {
 	animal: Animal;
@@ -9,21 +9,21 @@ interface DisplayAnimalProps {
     setUser: any;
     user: User;
     handleAdopted: (animalId: number, userId: number) => void;
-    adoptedList: Adopted[]
-}
+    adoptedList: Adopted[];
+};
 
 const DisplayAnimal = (props: DisplayAnimalProps) => {
-    const { name, image, gender, age, species, date, location } = props.animal
+    const { name, image, gender, age, species, date, location } = props.animal;
     const {setUser, setChosenAnimal, animal} = props;
     const navigate = useNavigate();
 
-    const [overlay, setOverlay] = useState<boolean>(false)
-    const [showForm, setShowForm] = useState<boolean>(false)
+    const [overlay, setOverlay] = useState<boolean>(false);
+    const [showForm, setShowForm] = useState<boolean>(false);
 
     const handleOverlay: () => void = () => {
         setOverlay(!overlay);
         if(showForm) {
-            setShowForm(false)
+            setShowForm(false);
         }
     }
 
@@ -31,13 +31,13 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
     const handleSubmit: (e:any) => void = (e:any) => {
         e.preventDefault();
-        setUser((prevUser: User) => ({...prevUser, userId: (Math.random() * 100)}))
-        setChosenAnimal(props.animal)
-        navigate('/confirmed')
+        setUser((prevUser: User) => ({...prevUser, userId: (Math.random() * 100)}));
+        setChosenAnimal(props.animal);
+        navigate('/confirmed');
     }
 
 
-    const findAdopted = props.adoptedList.find(adopted => adopted.animalId === animal.animalId)
+    const findAdopted = props.adoptedList.find(adopted => adopted.animalId === animal.animalId);
 
     return (
         <section className='card'>
@@ -72,6 +72,6 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
         </section>
     )
-}
+};
 
-export default DisplayAnimal
+export default DisplayAnimal;

@@ -7,15 +7,15 @@ interface FormCardProps {
     user: User;
     animal: Animal;
     handleAdopted: (animalId: number, userId: number) => void;
-}
+};
 
 export default function FormCard(props: FormCardProps) {
-    const {setUser, handleOverlay, handleSubmit, handleAdopted, animal, user} = props
+    const {setUser, handleOverlay, handleSubmit, handleAdopted, animal, user} = props;
 
     const handleFormInput: (e:any) => void = (e:any) => {
-        const {name, value } = e.target
-        setUser((prevUser: User) => ({...prevUser, [name]: value}))
-    }
+        const {name, value } = e.target;
+        setUser((prevUser: User) => ({...prevUser, [name]: value}));
+    };
 
     return (
         <section className="form-container">
@@ -59,4 +59,4 @@ export default function FormCard(props: FormCardProps) {
         </form>
     </section>
     )
-}
+};

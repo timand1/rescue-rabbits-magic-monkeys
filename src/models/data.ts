@@ -10,7 +10,7 @@ export interface Animal {
     location: string;
     diseases: string;
     animalId: number;
-}
+};
 
 export interface User {
 	fullName: string;
@@ -20,9 +20,9 @@ export interface User {
     about: string;
     extra: string;
     userId: number;
-}
+};
 
 export interface Adopted {
     animalId: number;
     userId: number;
-}
+};

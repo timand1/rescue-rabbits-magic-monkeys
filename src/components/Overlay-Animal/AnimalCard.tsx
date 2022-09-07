@@ -1,17 +1,16 @@
-import { Animal, Adopted } from '../../models/data'
+import { Animal, Adopted } from '../../models/data';
 
 interface AnimalCardProps {
     animal: Animal;
     handleOverlay: () => void;
     handleForm: () => void;
-
-    adoptedList: Adopted[]
-}
+    adoptedList: Adopted[];
+};
 
 export default function AnimalCard(props: AnimalCardProps) {
-    const { name, image, gender, age, species, breed, date, about, location, diseases } = props.animal
+    const { name, image, gender, age, species, breed, date, about, location, diseases } = props.animal;
 
-    const findAdopted = props.adoptedList.find(adopted => adopted.animalId === props.animal.animalId)
+    const findAdopted = props.adoptedList.find(adopted => adopted.animalId === props.animal.animalId);
     const buttonCSS : string = findAdopted ? ' btn-booked' : '';
 
     return (
@@ -54,4 +53,4 @@ export default function AnimalCard(props: AnimalCardProps) {
             </div>
         </section>
     )
-}
+};

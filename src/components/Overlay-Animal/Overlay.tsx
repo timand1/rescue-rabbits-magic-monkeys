@@ -1,6 +1,6 @@
-import { Animal, User, Adopted } from '../../models/data'
-import AnimalCard from './AnimalCard'
-import FormCard from './FormCard'
+import { Animal, User, Adopted } from '../../models/data';
+import AnimalCard from './AnimalCard';
+import FormCard from './FormCard';
 
 interface OverlayProps {
     animal: Animal;
@@ -11,8 +11,8 @@ interface OverlayProps {
     handleForm: () => void;
     user: User;
     handleAdopted: (animalId: number, userId: number) => void;
-    adoptedList: Adopted[]
-}
+    adoptedList: Adopted[];
+};
 
 export default function Overlay(props: OverlayProps) {  
 
@@ -33,4 +33,4 @@ export default function Overlay(props: OverlayProps) {
         
        
     )
-}
+};

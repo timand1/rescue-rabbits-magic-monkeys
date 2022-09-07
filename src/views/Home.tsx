@@ -1,8 +1,8 @@
-import AnimalList from '../components/Animal-Grid/AnimalList'
-import '../App.scss';
-import '../styles/Home.scss';
-import Hero from '../components/Hero';
-import { Animal, User, Adopted } from '../models/data'
+import AnimalList from '../components/Animal-Grid/AnimalList';
+import '../App.scss';;
+import '../styles/Home.scss';;
+import Hero from '../components/Hero';;
+import { Animal, User, Adopted } from '../models/data';
 
 interface HomeProps {
   animals: Animal[];
@@ -11,8 +11,8 @@ interface HomeProps {
   setUser: (user: User) => void;
   user: User;
   handleAdopted: (animalId: number, userId: number) => void;
-  adoptedList: Adopted[]
-}
+  adoptedList: Adopted[];
+};
 
 function Home(props: HomeProps) { 
 
@@ -26,6 +26,6 @@ function Home(props: HomeProps) {
       />
     </div>
   )
-}
+};
 
-export default Home
+export default Home;
