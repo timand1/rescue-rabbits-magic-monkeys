@@ -96,7 +96,7 @@ function AnimalList(props: AnimalListProps) {
     return (
         <section className='animal-container'>                      
             <section className="animals">
-                <Search searchAnimals={searchAnimals} searchMultiple={searchMultiple} setAnimals={props.setAnimals} /> 
+                <Search searchAnimals={searchAnimals} searchMultiple={searchMultiple} setAnimals={props.setAnimals} animals={props.animals} /> 
                 {singleAnimal}
             </section>
         </section>

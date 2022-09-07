@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Animal } from '../models/data';
 import data from '../data/data.json';
 import '../styles/_search.scss';
+import animalList from '../data/data.json'
 
 interface SearchProps {
+    animals: Animal[];
     setAnimals: (animal: Animal[]) => void;
     searchAnimals: (searchParam: string) => void;
     searchMultiple: (searchParam: string) => void;
@@ -39,23 +41,23 @@ export default function Search(props: SearchProps) {
         e.preventDefault();
     }
 
+    let resetSearch: boolean = false;
+
+    if(animalList.animals.length > props.animals.length) {
+        resetSearch = true;
+    }
+
     return (
         <form className='search-container' onSubmit={preventRefresh}>
             <div className='search'>
                 <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' onKeyUp={(e) => {handleSearch(e)}} />
-                <input className='cancel-search' type="reset" onClick={showAll} value="&#128473;" />
+                {resetSearch &&
+                    <input className='cancel-search' type="reset" onClick={showAll} value="&#128473;" />
+
+                }
                 <button className='search-btn' onClick={(e) => props.searchAnimals(searchInput)}>SÖK</button>
-            </div>
-                          
-        </form>
-            //     <div className='search-container'>
-            //     <div className='search'>
-            //         <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' onKeyUp={(e) => {handleSearch(e)}} />
-            //         <button className='search-btn' onClick={() => searchType(searchInput)} >SÖK</button>
-            //     </div>
-            //     <button className='show-all' onClick={showAll}>ALLA DJUR</button>               
-            // </div>     
-       
+            </div>                          
+        </form>       
     )
 };
 
