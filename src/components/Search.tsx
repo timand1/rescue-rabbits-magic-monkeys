@@ -29,15 +29,19 @@ export default function Search(props: SearchProps) {
     const showAll: () => void = () => {
         props.setAnimals(data.animals) 
      }    
+     const preventRefresh: (e:any) => void = (e:any) => {        
+        e.preventDefault();
+    }
 
     return (
-        <div className='search-container'>
+        <form className='search-container' onSubmit={preventRefresh}>
             <div className='search'>
                 <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' onKeyUp={(e) => {handleSearch(e)}} />
+                <input className='cancel-search' type="reset" onClick={showAll} value="&#128473;" />
                 <button className='search-btn' onClick={(e) => props.searchAnimals(searchInput)}>SÖK</button>
             </div>
-            <button className='show-all' onClick={showAll}>ALLA DJUR</button>               
-        </div>
+                          
+        </form>
         
        
     )
