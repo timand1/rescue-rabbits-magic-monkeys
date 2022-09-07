@@ -3,7 +3,7 @@ import logo from '../assets/LOGO.png'
 import { useState } from 'react';
 import {Animal} from '../models/data';
 import data from '../data/data.json';
-import '../styles/_navNew.scss';
+import '../styles/_nav.scss';
 
 interface NavProps {
     setAnimals: (animal: Animal[]) => void;

@@ -11,8 +11,7 @@
     h2 {
         font-size: 2em;
         margin: 1rem;
-    }
-    
+    }    
     section {
         @include variables.textContainer;
         img {
@@ -34,9 +33,7 @@
 }
 
 @media only screen and (max-width: 786px) {
-
     .about figure, .confirmed figure{
         transform: scale(40%);
-
     }
  }

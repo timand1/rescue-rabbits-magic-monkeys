@@ -15,12 +15,11 @@
         flex: 1;
         min-width: 250px;
         max-width: 360px;
-        // max-width: 540px;
         @include variables.flexContainer();
         justify-content: space-evenly;
         gap: 1em;
         padding: 1.5em;
-        background-color: #e6e4e4;
+        background-color: variables.$secondary-bg;
         box-shadow: variables.$box-shadow;
         border-bottom-right-radius: 1em;
 
@@ -34,7 +33,7 @@
             p {
                 padding: 1em;
                 border-top-left-radius: 1em;
-                background-color: #e6e4e4;
+                background-color: variables.$secondary-bg;
             }
         }
 
@@ -56,7 +55,7 @@
                     width: 0.4em;
                     height: 0.4em;
                     border-radius: 50%;
-                    background-color: #000;
+                    background-color: variables.$fontColor;
                 }
             }
         }       
@@ -66,7 +65,7 @@
             align-items: center;
             justify-content: space-between;
             .booked {
-                background-color: #975252;
+                background-color: variables.$adoptedColor;
                 padding: 0.5em 1.3em;
                 border-radius: 2em;
                 color: variables.$primary-bg;
@@ -80,7 +79,6 @@
     }
 }
 
-
 .overlay {
     position: fixed;
     width: 100vw;
@@ -93,7 +91,7 @@
 
     .animal-container {
         width: 35vw;
-        background-color: #e6e4e4;
+        background-color: variables.$secondary-bg;
         @include variables.flexContainer();
         border-radius: 1em;
         box-shadow: variables.$box-shadow;
@@ -119,27 +117,22 @@
                     min-width: 30%;
                 }
             }
-
-            button {
-                @include buttons.button(#5BD77E, #FFFFFF);
-                align-self: center;
-            }
-
             .btn-booked {
-                @include buttons.button(#975252, variables.$primary-bg);
+                @include buttons.button(variables.$adoptedColor, variables.$primary-bg);
                 &:hover {
                     cursor: auto;
                     transform: none;
-                    background: #975252;
+                    background: variables.$adoptedColor;
                 }
             }
         }
     }    
     .form-container {
         width: 35vw;
-        background-color: #e6e4e4;
+        background-color: variables.$secondary-bg;
         padding: 2em;
         box-shadow: variables.$box-shadow;
+        
         .form-header {
             @include variables.flexContainer(row); 
             justify-content: space-between;
@@ -154,26 +147,30 @@
         .input-container {
             @include variables.flexContainer();  
         }
-        button {
-            @include buttons.button(#5BD77E, #FFFFFF);
-            align-self: center;  
-        }
     } 
+    button {
+        @include buttons.button(variables.$continueColor, variables.$secondary-bg);
+        align-self: center;  
+    }
 
 }
 
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 786px) {        
     .animals {
         max-width: 90%;
-        .animal-container {
-            width: 90%;
+        .overlay {
+            // padding-top: 2em;
+            z-index: 100;
+            .animal-container {
+                width: 90%;
+                max-height: 80%;
+            }
+            .form-container {
+                width: 90%;
+                max-height: 80%;
+                overflow-y: scroll;
+            }
         }
-        .form-container {
-            width: 90%;
-            max-height: 90%;
-            overflow: scroll;
-        }
-    }
-
+    }   
 }
 

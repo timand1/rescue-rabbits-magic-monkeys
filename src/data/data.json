@@ -11,7 +11,6 @@
             "about": "Inskaffades under corona pandemin. Ägaren tröttnade när det var över och kastade ut Bert på gatan.",
             "location": "Karlstad",
             "diseases": "-",
-            "booked": false,
             "animalId": 1
         },
         {
@@ -25,7 +24,6 @@
             "about": "Sommarkatt. Hittades i skogen utanför Karlstad hösten 2017.",
             "location": "Stockholm",
             "diseases": "-",
-            "booked": true,
             "animalId": 2
         },
         {
@@ -39,7 +37,6 @@
             "about": "Spelade bort sina pengar på trav. Hemlös p.g.a. detta och söker nu ett nytt hem.",
             "location": "Stockholm",
             "diseases": "Stockholmare",
-            "booked": false,
             "animalId": 3
         },
         {
@@ -53,13 +50,12 @@
             "about": "Upphittad på en lekpark i Göteborgs centrum. Okänd orsak.",
             "location": "Göteborg",
             "diseases": "Rabies, tandproblem",
-            "booked": true,
             "animalId": 4
         },
         {
             "name": "Kalle",
             "image": "/dog3.webp",
-            "gender": "Hona",
+            "gender": "Hane",
             "age": "12",
             "species": "Hund",
             "breed": "Pitbull",
@@ -67,22 +63,73 @@
             "about": "Kommer från ett hem med våldsamma ägare.",
             "location": "Göteborg",
             "diseases": "-",
-            "booked": false,
             "animalId": 5
         },
         {
             "name": "Björn",
-            "image": "/dog3.webp",
-            "gender": "Hona",
+            "image": "/dog4.jpg",
+            "gender": "Hane",
             "age": "12",
             "species": "Hund",
-            "breed": "Pitbull",
-            "date": "12-03-10",
-            "about": "Kommer från ett hem med våldsamma ägare.",
-            "location": "Göteborg",
-            "diseases": "-",
-            "booked": false,
+            "breed": "Oklart",
+            "date": "15-05-22",
+            "about": "Björn är en lekfull hund som bajsar inomhus och i sängen. Älskar att leka \"var har du bajsat?\".",
+            "location": "Karlstad",
+            "diseases": "Blind",
             "animalId": 6
+        },
+        {
+            "name": "Snowdrop",
+            "image": "/dog5.jpg",
+            "gender": "Hane",
+            "age": "2",
+            "species": "Hund",
+            "breed": "Labrador",
+            "date": "15-05-21",
+            "about": "Snowdrop har left på gatan hela sitt liv innan Rescue Rangers hittade honom i maj 2021. Älskar att bada.",
+            "location": "Karlstad",
+            "diseases": "Grönt utslag på huvudet",
+            "animalId": 7
+        },
+        {
+            "name": "Wilma",
+            "image": "/cat4.jpg",
+            "gender": "Hona",
+            "age": "2",
+            "species": "Katt",
+            "breed": "Sphynx",
+            "date": "25-04-21",
+            "about": "Förra ägare slängde ut Wilma p.g.a. ingen päls.",
+            "location": "Stockholm",
+            "diseases": "Flintskallig",
+            "animalId": 8
+        },
+        {
+            "name": "Margit",
+            "image": "/cat5.jpg",
+            "gender": "Hona",
+            "age": "3",
+            "species": "Katt",
+            "breed": "Bondkatt",
+            "date": "14-02-21",
+            "about": "Förra ägaren trodde inte på corona pandemin, så när Margit började med munskydd blev hon utslängd.",
+            "location": "Karlstad",
+            "diseases": "-",
+            "animalId": 9
+        },
+        {
+            "name": "Hästrid",
+            "image": "/horse2.jpg",
+            "gender": "Hona",
+            "age": "3",
+            "species": "Häst",
+            "breed": "Aegidienberger",
+            "date": "05-11-21",
+            "about": "När Hästrid fick diagnosen skrattsjuk och kunde inte sluta skratta blev hon utslängd och lämnad ensam. Upphittad en kall novembernatt på stora torget i Karlstad.",
+            "location": "Karlstad",
+            "diseases": "Skrattsjukan",
+            "animalId": 10
         }
+        
     ]
 }

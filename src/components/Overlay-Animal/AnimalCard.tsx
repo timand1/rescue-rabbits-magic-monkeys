@@ -49,7 +49,7 @@ export default function AnimalCard(props: AnimalCardProps) {
                     <p className='sub-headline'>Sjukdomar : </p>
                     <p>{diseases}</p>
                 </div>
-                <button className={'btn' + buttonCSS} onClick={!findAdopted ? props.handleForm : undefined}> {findAdopted ? 'Bokad' : 'Intresseanmäl' }</button>
+                <button className={'btn' + buttonCSS} onClick={!findAdopted ? props.handleForm : undefined}> {findAdopted ? 'Bokad' : 'Adoptera' }</button>
             </div>
         </section>
     )
