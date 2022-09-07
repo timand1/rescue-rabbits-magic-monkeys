@@ -1,8 +1,9 @@
 import { useNavigate, NavLink } from 'react-router-dom';
 import logo from '../assets/LOGO.png'
 import { useState } from 'react';
-import {Animal} from '../models/data'
-import data from '../data/data.json'
+import {Animal} from '../models/animal'
+import animalList from '../animals.json'
+
 import '../styles/_navNew.scss'
 
 interface NavProps {
@@ -14,7 +15,8 @@ export default function Nav(props: NavProps) {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
     const handleMenu: () => void = () => {
-        setMenuOpen(!menuOpen);       
+        setMenuOpen(!menuOpen);
+       
     }
 
     const changeUrl: () => void = () => {
@@ -24,32 +26,41 @@ export default function Nav(props: NavProps) {
 
     const handleHome: () => void = () => {
         showAll()
-        navigate('/')
         setMenuOpen(false)
         const root:any = document.querySelector('#root')
         root.scrollIntoView({
             behavior: 'smooth'
           });
     }
-
    const scrollToAnimals: () => void = () => {
+    setMenuOpen(false)
+    setTimeout(() => {
+        const divider:any = document.querySelector('#divider')
+        divider.scrollIntoView({
+            behavior: 'smooth'
+          });
+    }, 100);
+       
+    }
+
+    const handleLogo: () => void = () => {
         setMenuOpen(false)
-        setTimeout(() => {
-            const divider:any = document.querySelector('#divider')
-            divider.scrollIntoView({
-                behavior: 'smooth'
-                });
-        }, 100);       
+        showAll()
+        navigate('/')
+        const root:any = document.querySelector('#root')
+        root.scrollIntoView({
+            behavior: 'smooth'
+          });
     }
 
     const showAll: () => void = () => {
-        props.setAnimals(data.animals) 
-    }
+        props.setAnimals(animalList.animals) 
+     }
 
     return (         
         <header>                
             <div className="logo-container">
-                <img className='logo' onClick={(handleHome)} src={logo} alt="img" />
+                <img className='logo' onClick={(handleLogo)} src={logo} alt="img" />
                 <h2>RESCUE RANGERS</h2>
             </div>
             <div className="menu-btn" onClick={handleMenu}>
