@@ -11,7 +11,8 @@
             "about": "Inskaffades under corona pandemin. Ägaren tröttnade när det var över och kastade ut Bert på gatan.",
             "location": "Karlstad",
             "diseases": "-",
-            "booked": false
+            "booked": false,
+            "animalId": 1
         },
         {
             "name": "Kattrin",
@@ -24,7 +25,8 @@
             "about": "Sommarkatt. Hittades i skogen utanför Karlstad hösten 2017.",
             "location": "Stockholm",
             "diseases": "-",
-            "booked": true
+            "booked": true,
+            "animalId": 2
         },
         {
             "name": "Harry",
@@ -37,7 +39,8 @@
             "about": "Spelade bort sina pengar på trav. Hemlös p.g.a. detta och söker nu ett nytt hem.",
             "location": "Stockholm",
             "diseases": "Stockholmare",
-            "booked": false
+            "booked": false,
+            "animalId": 3
         },
         {
             "name": "Doge",
@@ -50,7 +53,8 @@
             "about": "Upphittad på en lekpark i Göteborgs centrum. Okänd orsak.",
             "location": "Göteborg",
             "diseases": "Rabies, tandproblem",
-            "booked": true
+            "booked": true,
+            "animalId": 4
         },
         {
             "name": "Kalle",
@@ -63,7 +67,8 @@
             "about": "Kommer från ett hem med våldsamma ägare.",
             "location": "Göteborg",
             "diseases": "-",
-            "booked": false
+            "booked": false,
+            "animalId": 5
         },
         {
             "name": "Björn",
@@ -76,7 +81,8 @@
             "about": "Kommer från ett hem med våldsamma ägare.",
             "location": "Göteborg",
             "diseases": "-",
-            "booked": false
+            "booked": false,
+            "animalId": 6
         }
     ]
 }
