@@ -3,26 +3,33 @@
     padding: 5rem 0 5rem 0;
     width: 100vw;
     height: 8rem;
-    background-color: rgb(0, 0, 0);
     color: white;
+    background-color: rgb(0, 0, 0);    
     @include variables.flexContainer();
     justify-content: center;
     align-items: center ;
-    text-align: center;       
+    text-align: center;   
 }
-
+    
 .footer{
+    @include variables.flexContainer(row);
     transition: .1s all;    
     gap: 2rem;
-}
 
-.footer-header{
-    font-size: 1.3rem;
-    margin-bottom: .5rem;
-}
-.footer-info{
-    font-size: .8rem;
-}
+    .footer-box{
+
+        .footer-header{
+            
+            font-family: variables.$primary-font;
+            font-size: 1.3rem;
+            margin-bottom: .5rem;
+            }
+            .footer-info{
+                font-size: .8rem;
+            }
+        }
+    }
+
 
 @media only screen and (max-width: 786px) {
     .footer{

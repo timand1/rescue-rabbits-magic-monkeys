@@ -11,7 +11,7 @@ export default function Footer() {
 
 
     return (
-        <footer className=' flex footer-container'>
+        <footer className='footer-container'>
             <div className='flex footer'>
                 <div className='footer-box'>
                     <h2 className='footer-header '>Djurskyddet</h2>
