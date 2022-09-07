@@ -1,6 +1,4 @@
-// import '../styles/Confirmed.scss'
-import { Animal } from '../models/animal'
-import { User } from '../models/user'
+import { Animal, User } from '../models/data'
 import '../styles/Confirmed.scss'
 import logo from '../assets/LOGO.png'
 
@@ -9,9 +7,6 @@ interface ConfirmedProps {
     user: User;
   }
 function Confirmed(props: ConfirmedProps) {
-    console.log(props)
-    console.log(props.user)
-    console.log(props.chosenAnimal)
 
     return (
         <article className="confirmed">
