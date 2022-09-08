@@ -9,6 +9,7 @@ export interface Animal {
     about: string;
     location: string;
     diseases: string;
+    vaccinationer: string;
     animalId: number;
 };
 

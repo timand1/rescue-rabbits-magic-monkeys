@@ -88,6 +88,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     display: grid;
     place-items: center;
+    padding: 3em;
 
     .animal-container {
         width: 35vw;
@@ -95,6 +96,7 @@
         @include variables.flexContainer();
         border-radius: 1em;
         box-shadow: variables.$box-shadow;
+        max-height: 80%;
 
         figure {
             justify-content: space-between;
@@ -132,6 +134,8 @@
         background-color: variables.$secondary-bg;
         padding: 2em;
         box-shadow: variables.$box-shadow;
+        max-height: 80%;
+        overflow-y: scroll;
         
         .form-header {
             @include variables.flexContainer(row); 
@@ -155,20 +159,24 @@
 
 }
 
+@media screen and (max-height: 800px) {
+    .animal-container {
+        overflow-y: scroll;
+    }
+}
+
 @media screen and (max-width: 786px) {        
     .animals {
         max-width: 90%;
+        justify-content: center;
         .overlay {
             // padding-top: 2em;
             z-index: 100;
             .animal-container {
                 width: 90%;
-                max-height: 80%;
             }
             .form-container {
                 width: 90%;
-                max-height: 80%;
-                overflow-y: scroll;
             }
         }
     }   

@@ -5,16 +5,19 @@ import Overlay from '../Overlay-Animal/Overlay';
 
 interface DisplayAnimalProps {
 	animal: Animal;
-    setChosenAnimal: (chosenAnimal: Animal) => void;
-    setUser: any;
-    user: User;
-    handleAdopted: (animalId: number, userId: number) => void;
-    adoptedList: Adopted[];
+    displayAnimalObj: {
+        setChosenAnimal: (chosenAnimal: Animal) => void;
+        setUser: any;
+        user: User;
+        handleAdopted: (animalId: number, userId: number) => void;
+        adoptedList: Adopted[];
+    }
 };
 
 const DisplayAnimal = (props: DisplayAnimalProps) => {
     const { name, image, gender, age, species, date, location } = props.animal;
-    const {setUser, setChosenAnimal, animal} = props;
+    const { user, setUser, setChosenAnimal, adoptedList, handleAdopted } = props.displayAnimalObj;
+
     const navigate = useNavigate();
 
     const [overlay, setOverlay] = useState<boolean>(false);
@@ -31,13 +34,38 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
 
     const handleSubmit: (e:any) => void = (e:any) => {
         e.preventDefault();
-        setUser((prevUser: User) => ({...prevUser, userId: (Math.random() * 100)}));
+        setUser((prevUser: User) => ({...prevUser, userId: (Math.floor(Math.random() * 100))}));
+        console.log(user)
         setChosenAnimal(props.animal);
         navigate('/confirmed');
     }
 
 
-    const findAdopted = props.adoptedList.find(adopted => adopted.animalId === animal.animalId);
+    const findAdopted: boolean = adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
+
+    interface OverlayProps {
+        animal: Animal;
+        showForm: boolean;
+        setUser: User;
+        handleSubmit: (e:any) => void;
+        handleOverlay: () => void;
+        handleForm: () => void;
+        user: User;
+        handleAdopted: (animalId: number, userId: number) => void;
+        adoptedList: Adopted[];
+    };
+
+    const overlayProps: OverlayProps = {
+        animal: props.animal,
+        showForm: showForm,
+        setUser: user,
+        handleSubmit: handleSubmit,
+        handleOverlay: handleOverlay,
+        handleForm: handleForm,
+        user: user,
+        handleAdopted: handleAdopted,
+        adoptedList: adoptedList
+    }
 
     return (
         <section className='card'>
@@ -61,15 +89,8 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
             <button className='btn-card' onClick={handleOverlay}>Läs Mer</button>
         </section>
             {overlay && 
-                <Overlay 
-                    animal={animal} setUser={setUser} 
-                    showForm={showForm} handleForm={handleForm} 
-                    handleOverlay={handleOverlay} handleSubmit={handleSubmit} 
-                    user={props.user} handleAdopted={props.handleAdopted}
-                    adoptedList={props.adoptedList}
-                />            
+                <Overlay overlayProps={overlayProps} />            
             }
-
         </section>
     )
 };

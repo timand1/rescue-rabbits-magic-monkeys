@@ -1,16 +1,18 @@
 import { Animal, User } from '../../models/data'
 
 interface FormCardProps {
-    setUser: any;
-    handleSubmit: (e:any) => void;
-    handleOverlay: () => void;
-    user: User;
-    animal: Animal;
-    handleAdopted: (animalId: number, userId: number) => void;
+    formCardProps : {
+        setUser: any;
+        handleSubmit: (e:any) => void;
+        handleOverlay: () => void;
+        user: User;
+        animal: Animal;
+        handleAdopted: (animalId: number, userId: number) => void;
+    }
 };
 
 export default function FormCard(props: FormCardProps) {
-    const {setUser, handleOverlay, handleSubmit, handleAdopted, animal, user} = props;
+    const {setUser, handleOverlay, handleSubmit, handleAdopted, animal, user} = props.formCardProps;
 
     const handleFormInput: (e:any) => void = (e:any) => {
         const {name, value } = e.target;
@@ -33,19 +35,19 @@ export default function FormCard(props: FormCardProps) {
                 </div>
                 <div className="input-container">
                     <label htmlFor="email">E-mail*</label>
-                    <input type="email" id='email' name='fullName' required onChange={(e) => handleFormInput(e)}/>
+                    <input type="email" id='email' name='email' required onChange={(e) => handleFormInput(e)}/>
                 </div>
                 <div className="input-container">
                     <label htmlFor="city">Stad*</label>
-                    <input type="text" id='city' name='fullName' required onChange={(e) => handleFormInput(e)}/>
+                    <input type="text" id='city' name='city' required onChange={(e) => handleFormInput(e)}/>
                 </div>
                 <div className="input-container">
                     <label htmlFor="adress">Adress*</label>
-                    <input type="text" id='adress' name='fullName' required onChange={(e) => handleFormInput(e)}/>
+                    <input type="text" id='adress' name='adress' required onChange={(e) => handleFormInput(e)}/>
                 </div>
                 <div className="input-container">
                     <label htmlFor="zipcode">Postnummer*</label>
-                    <input type="number" id='zipcode' name='fullName' required placeholder='12345' min={10000} max={99999} onChange={(e) => handleFormInput(e)}/>
+                    <input type="number" id='zipcode' name='zipcode' required placeholder='12345' min={10000} max={99999} onChange={(e) => handleFormInput(e)}/>
                 </div>
                 <div className="input-container">
                     <label htmlFor="about">Om dig</label>

@@ -8,9 +8,9 @@ interface AnimalCardProps {
 };
 
 export default function AnimalCard(props: AnimalCardProps) {
-    const { name, image, gender, age, species, breed, date, about, location, diseases } = props.animal;
+    const { name, image, gender, age, species, breed, date, about, location, diseases, vaccinationer } = props.animal;
 
-    const findAdopted = props.adoptedList.find(adopted => adopted.animalId === props.animal.animalId);
+    const findAdopted: boolean = props.adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
     const buttonCSS : string = findAdopted ? ' btn-booked' : '';
 
     return (
@@ -48,6 +48,10 @@ export default function AnimalCard(props: AnimalCardProps) {
                 <div>
                     <p className='sub-headline'>Sjukdomar : </p>
                     <p>{diseases}</p>
+                </div>
+                <div>
+                    <p className='sub-headline'>Vaccinationer : </p>
+                    <p>{vaccinationer}</p>
                 </div>
                 <button className={'btn' + buttonCSS} onClick={!findAdopted ? props.handleForm : undefined}> {findAdopted ? 'Bokad' : 'Adoptera' }</button>
             </div>

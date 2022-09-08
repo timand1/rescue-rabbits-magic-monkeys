@@ -11,6 +11,7 @@
             "about": "Inskaffades under corona pandemin. Ägaren tröttnade när det var över och kastade ut Bert på gatan.",
             "location": "Karlstad",
             "diseases": "-",
+            "vaccinationer": "Alla",
             "animalId": 1
         },
         {
@@ -24,6 +25,7 @@
             "about": "Sommarkatt. Hittades i skogen utanför Karlstad hösten 2017.",
             "location": "Stockholm",
             "diseases": "-",
+            "vaccinationer": "Alla",
             "animalId": 2
         },
         {
@@ -37,6 +39,7 @@
             "about": "Spelade bort sina pengar på trav. Hemlös p.g.a. detta och söker nu ett nytt hem.",
             "location": "Stockholm",
             "diseases": "Stockholmare",
+            "vaccinationer": "För stelkramp",
             "animalId": 3
         },
         {
@@ -50,6 +53,7 @@
             "about": "Upphittad på en lekpark i Göteborgs centrum. Okänd orsak.",
             "location": "Göteborg",
             "diseases": "Rabies, tandproblem",
+            "vaccinationer": "Inga",
             "animalId": 4
         },
         {
@@ -63,6 +67,7 @@
             "about": "Kommer från ett hem med våldsamma ägare.",
             "location": "Göteborg",
             "diseases": "-",
+            "vaccinationer": "Alla",
             "animalId": 5
         },
         {
@@ -76,6 +81,7 @@
             "about": "Björn är en lekfull hund som bajsar inomhus och i sängen. Älskar att leka \"var har du bajsat?\".",
             "location": "Karlstad",
             "diseases": "Blind",
+            "vaccinationer": "Alla",
             "animalId": 6
         },
         {
@@ -89,6 +95,7 @@
             "about": "Snowdrop har left på gatan hela sitt liv innan Rescue Rangers hittade honom i maj 2021. Älskar att bada.",
             "location": "Karlstad",
             "diseases": "Grönt utslag på huvudet",
+            "vaccinationer": "Alla",
             "animalId": 7
         },
         {
@@ -102,6 +109,7 @@
             "about": "Förra ägare slängde ut Wilma p.g.a. ingen päls.",
             "location": "Stockholm",
             "diseases": "Flintskallig",
+            "vaccinationer": "Alla",
             "animalId": 8
         },
         {
@@ -115,6 +123,7 @@
             "about": "Förra ägaren trodde inte på corona pandemin, så när Margit började med munskydd blev hon utslängd.",
             "location": "Karlstad",
             "diseases": "-",
+            "vaccinationer": "Inga",
             "animalId": 9
         },
         {
@@ -128,6 +137,7 @@
             "about": "När Hästrid fick diagnosen skrattsjuk och kunde inte sluta skratta blev hon utslängd och lämnad ensam. Upphittad en kall novembernatt på stora torget i Karlstad.",
             "location": "Karlstad",
             "diseases": "Skrattsjukan",
+            "vaccinationer": "Inga",
             "animalId": 10
         }
         

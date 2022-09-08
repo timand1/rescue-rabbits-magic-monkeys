@@ -1,10 +1,7 @@
-
 @use 'variables';
 @use 'buttons';
 
-.hero{
-    
-    
+.hero {   
     @include variables.flexContainer();
     @extend %app-size; 
     min-width: 70vw;   
@@ -12,30 +9,34 @@
     flex-wrap: wrap;
     padding: 1.5em;  
     margin-bottom: 1.5em;  
-    background-color: #e6e4e4;
-    background-color: rgb(207, 207, 207);
+    background-color: variables.$secondary-bg;
     border-radius: 65% 35% 70% 30% / 87% 86% 14% 13%;
-}
-.hero-fig{
-    @include variables.flexContainer();
-    
-    width: 100%;
-    height: 25rem;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;  
-    border-radius: 28% 72% 35% 65% / 17% 28% 72% 83% ;
-    
-    
-}
-.hero-article{
-    
-    @include variables.flexContainer();
-    align-items: flex-start;
-    max-width: 30rem;
-    margin: 3rem;
-    transition: .5s all;
 
+    .hero-fig{
+        @include variables.flexContainer();        
+        @extend %bg-image;
+        width: 100%;
+        height: 25rem;
+        border-radius: 28% 72% 35% 65% / 17% 28% 72% 83% ;
+        
+        .hero-article{            
+            @include variables.flexContainer();
+            justify-content: space-between;
+            margin: 3em;
+            transition: .5s all;
+            width: 100%;
+            height: 100%;
+
+            p {
+                align-self: center;
+                justify-self: center;
+                max-width: 30em;
+                padding: 1em;
+                background-color: variables.$hero-text-color;
+                border-radius: 2em;
+            }
+        }        
+    }
 }
 
 #divider {
@@ -45,15 +46,19 @@
     margin: 4em auto;
 }
 
+
 @media screen and (max-width: 786px) {
     .hero {
         text-align: center;
-        .hero-article {
-            height: 100%;
-            margin: 0;
+        .hero-fig {
+            align-items: center;
+            justify-content: flex-end;
+            .hero-article {
+                height: 100%;
+                margin: 0;
             h1 {
                 margin-top: auto;
-                background-color: #dad0ee;
+                background-color: variables.$hero-text-color;
                 padding: 0.4em;
                 border: 2px solid black;
                 border-top: 5px solid black;
@@ -63,6 +68,7 @@
             p {
                 display: none;
             }
+        }
         }
     }
     .hero-article p {

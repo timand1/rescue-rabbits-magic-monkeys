@@ -30,14 +30,33 @@ function App() {
     setAdoptedList(newAdoptedList);
   };
 
+  interface HomeProps {
+    animals: Animal[];
+    setAnimals: (setAnimals: Animal[]) => void;
+    setChosenAnimal: (chosenAnimal: Animal) => void;
+    setUser: (user: User) => void;
+    user: User;
+    handleAdopted: (animalId: number, userId: number) => void;
+    adoptedList: Adopted[];
+  };
+
+  const homeProps:HomeProps = {
+    animals: animals,
+    setAnimals: setAnimals,
+    setChosenAnimal: setChosenAnimal,
+    setUser: setUser,
+    user: user,
+    handleAdopted: handleAdopted,
+    adoptedList: adoptedList
+
+  }
+
   return (
     <div className="App">
       <Nav setAnimals={setAnimals} />
       <Routes>
         <Route path='/' element={ <Home 
-          animals={animals} setAnimals={setAnimals} 
-          setUser={setUser} setChosenAnimal={setChosenAnimal} user={user} 
-          handleAdopted={handleAdopted} adoptedList={adoptedList}
+          homeProps={homeProps}
         /> } />
         <Route path='/About' element={ <About /> } />
         <Route path='/Confirmed' element={ <Confirmed chosenAnimal={chosenAnimal} user={user} /> } />

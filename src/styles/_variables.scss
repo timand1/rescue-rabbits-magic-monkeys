@@ -4,6 +4,7 @@ $fontColor: #000000;
 $adoptedColor: #975252;
 $continueColor: #358f4e;
 $navColor: #FFFFFF;
+$hero-text-color: #dad0ee;
 $primary-font: 'Roboto', sans-serif;
 $header-font: 'Jost', sans-serif;
 $box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
@@ -39,10 +40,32 @@ $box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
             width: 10rem;
             height: 10rem;
             margin: 0;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            @extend %bg-image
         }
+}
+
+@mixin aboutPageLayout() {
+    max-width: 35rem;
+    width: 100%;
+    margin: 0 auto;
+    @include flexContainer();
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    h1 {
+        font-size: 2.5em;
+    }
+    section {
+        @include flexContainer();
+        gap: 2em;
+        @include textContainer;
+        padding-bottom: 8em;
+        position: relative;
+        figure {
+            @extend %bg-image;
+            transition: .5s all;
+        }
+    }
 }
 
 

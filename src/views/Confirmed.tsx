@@ -8,7 +8,7 @@ interface ConfirmedProps {
   };
   
 function Confirmed(props: ConfirmedProps) {
-    const orderNum = props.user.userId + (Math.random() * 1000);
+    const orderNum = props.user.userId + (Math.floor(Math.random() * 1000));
 
     return (
         <article className="confirmed">

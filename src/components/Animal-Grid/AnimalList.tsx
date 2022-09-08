@@ -5,22 +5,37 @@ import '../../styles/AnimalList.scss';
 import data from '../../data/data.json';
 
 interface AnimalListProps {
-    animals: Animal[];
-    setAnimals: (animal: Animal[]) => void;
-    setChosenAnimal: (animal:Animal) => void;
-    setUser: (user: User) => void;
-    user: User;
-    handleAdopted: (animalId: number, userId: number) => void;
-    adoptedList: Adopted[];
+    animalListProps: {
+        animals: Animal[];
+        setAnimals: (animal: Animal[]) => void;
+        setChosenAnimal: (animal:Animal) => void;
+        setUser: (user: User) => void;
+        user: User;
+        handleAdopted: (animalId: number, userId: number) => void;
+        adoptedList: Adopted[];
+    }
 };
 
 function AnimalList(props: AnimalListProps) {
-    const singleAnimal = props.animals.map((animal) => 
-            <DisplayAnimal 
-                key={animal.animalId} setUser={props.setUser} animal={animal} 
-                setChosenAnimal={props.setChosenAnimal} user={props.user} 
-                handleAdopted={props.handleAdopted} adoptedList={props.adoptedList}
-            />);
+
+    interface DisplayAnimalProps {
+        setChosenAnimal: (chosenAnimal: Animal) => void;
+        setUser: any;
+        user: User;
+        handleAdopted: (animalId: number, userId: number) => void;
+        adoptedList: Adopted[];
+    };
+
+    const displayAnimalProps:DisplayAnimalProps = {
+        setChosenAnimal: props.animalListProps.setChosenAnimal,
+        setUser: props.animalListProps.setUser,
+        user: props.animalListProps.user,
+        handleAdopted: props.animalListProps.handleAdopted,
+        adoptedList: props.animalListProps.adoptedList    
+    }
+
+    const singleAnimal = props.animalListProps.animals.map((animal) => 
+            <DisplayAnimal key={animal.animalId} animal={animal} displayAnimalObj={displayAnimalProps} />);
 
     const searchAnimals: (searchParam: any) => void = (searchParam: any) => {
         const arrCopy = data.animals;
@@ -52,7 +67,7 @@ function AnimalList(props: AnimalListProps) {
             (search : any, index: number, searches: any) => 
             searches.findIndex((b:any) => b.name === search.name) === index);
 
-        props.setAnimals(filteredSearch);          
+        props.animalListProps.setAnimals(filteredSearch);          
     };
 
     const searchMultiple: (searchParam: any) => void = (searchParam) => {
@@ -90,13 +105,16 @@ function AnimalList(props: AnimalListProps) {
             (search : any, index: number, searches: any) => 
             searches.findIndex((b:any) => b.name === search.name) === index);
 
-        props.setAnimals(filteredSearch);
+        props.animalListProps.setAnimals(filteredSearch);
     };
     
     return (
         <section className='animal-container'>                      
             <section className="animals">
-                <Search searchAnimals={searchAnimals} searchMultiple={searchMultiple} setAnimals={props.setAnimals} animals={props.animals} /> 
+                <Search 
+                    searchAnimals={searchAnimals} searchMultiple={searchMultiple} 
+                    setAnimals={props.animalListProps.setAnimals} animals={props.animalListProps.animals} 
+                /> 
                 {singleAnimal}
             </section>
         </section>

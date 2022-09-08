@@ -1,14 +1,6 @@
-// import { useNavigate } from 'react-router-dom';
-
-
-import '../styles/_footer.scss'
-
+import '../styles/_footer.scss';
 
 export default function Footer() {  
-
-    // const navigate = useNavigate();
-
-
 
     return (
         <footer className='footer-container'>
@@ -27,16 +19,9 @@ export default function Footer() {
                     <p className='footer-info'>Varför Rescue Rabbits?</p>
                     <p className='footer-info'>Nyheter</p>
                 </div>
-
-                
             </div>
-
-
-
-
-        </footer>
-       
+        </footer>       
     )
-}
+};
 
 
