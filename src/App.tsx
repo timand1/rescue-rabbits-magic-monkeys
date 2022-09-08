@@ -17,11 +17,9 @@ function App() {
   const allAnimals:Array<Animal> = data.animals;
   const [chosenAnimal, setChosenAnimal] = useState<Animal>();
   const [animals, setAnimals] = useState<Animal[]>(allAnimals);
-  // Localstorage för alla djur lsitan
   const [user, setUser] = useState<User>({fullName: '', email: '', adress: '', zipcode: 12345, about: '', extra: '', userId: 0});
 
   const [adoptedList, setAdoptedList] = useState<Adopted[]>([]);
-  // localstorage för adopt listan
   const handleAdopted = (animalId: number, userId: number) => {
         let adopted: Adopted = {
             userId: userId,

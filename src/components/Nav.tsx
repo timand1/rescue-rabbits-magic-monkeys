@@ -50,7 +50,7 @@ export default function Nav(props: NavProps) {
         <header>                
             <div className="logo-container">
                 <img className='logo' onClick={(handleHome)} src={logo} alt="img" />
-                <h2>RESCUE RANGERS</h2>
+                <h2>RESCUE RABBITS</h2>
             </div>
             <div className="menu-btn" onClick={handleMenu}>
                 <span className={menuOpen ? 'menu-btn--top' : ''}></span>
