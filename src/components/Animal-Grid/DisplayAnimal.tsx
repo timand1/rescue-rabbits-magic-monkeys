@@ -1,27 +1,22 @@
 import { Animal, Adopted, User } from '../../models/data';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store';
 import Overlay from '../Overlay-Animal/Overlay';
 
 interface DisplayAnimalProps {
 	animal: Animal;
-    displayAnimalObj: {
-        setChosenAnimal: (chosenAnimal: Animal) => void;
-        setUser: any;
-        user: User;
-        handleAdopted: (animalId: number, userId: number) => void;
-        adoptedList: Adopted[];
-    }
 };
 
 const DisplayAnimal = (props: DisplayAnimalProps) => {
     const { name, image, gender, age, species, date, location } = props.animal;
-    const { user, setUser, setChosenAnimal, adoptedList, handleAdopted } = props.displayAnimalObj;
-
-    const navigate = useNavigate();
 
     const [overlay, setOverlay] = useState<boolean>(false);
     const [showForm, setShowForm] = useState<boolean>(false);
+
+    const adoptedList = useSelector((state: RootState) => state.adoptedList)
+
+    const findAdopted: boolean = adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
 
     const handleOverlay: () => void = () => {
         setOverlay(!overlay);
@@ -31,41 +26,6 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
     }
 
     const handleForm: () => void = () => setShowForm(!showForm);
-
-    const handleSubmit: (e:any) => void = (e:any) => {
-        e.preventDefault();
-        setUser((prevUser: User) => ({...prevUser, userId: (Math.floor(Math.random() * 100))}));
-        console.log(user)
-        setChosenAnimal(props.animal);
-        navigate('/confirmed');
-    }
-
-
-    const findAdopted: boolean = adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
-
-    interface OverlayProps {
-        animal: Animal;
-        showForm: boolean;
-        setUser: User;
-        handleSubmit: (e:any) => void;
-        handleOverlay: () => void;
-        handleForm: () => void;
-        user: User;
-        handleAdopted: (animalId: number, userId: number) => void;
-        adoptedList: Adopted[];
-    };
-
-    const overlayProps: OverlayProps = {
-        animal: props.animal,
-        showForm: showForm,
-        setUser: user,
-        handleSubmit: handleSubmit,
-        handleOverlay: handleOverlay,
-        handleForm: handleForm,
-        user: user,
-        handleAdopted: handleAdopted,
-        adoptedList: adoptedList
-    }
 
     return (
         <section className='card'>
@@ -89,7 +49,7 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
             <button className='btn-card' onClick={handleOverlay}>Läs Mer</button>
         </section>
             {overlay && 
-                <Overlay overlayProps={overlayProps} />            
+                <Overlay animal={props.animal} showForm={showForm} handleForm={handleForm} handleOverlay={handleOverlay} />            
             }
         </section>
     )

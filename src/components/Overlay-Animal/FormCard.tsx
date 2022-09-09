@@ -1,31 +1,49 @@
-import { Animal, User } from '../../models/data'
+import { Animal, Adopted, User } from '../../models/data';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+import { actions as userActions } from '../../features/userReducer'
+import { actions as chosenActions } from '../../features/chosenReducer'
+import { actions as adoptedActions } from '../../features/adoptedReducer'
 
 interface FormCardProps {
-    formCardProps : {
-        setUser: any;
-        handleSubmit: (e:any) => void;
-        handleOverlay: () => void;
-        user: User;
-        animal: Animal;
-        handleAdopted: (animalId: number, userId: number) => void;
-    }
+    animal: Animal;
+    handleOverlay: () => void;
 };
 
-export default function FormCard(props: FormCardProps) {
-    const {setUser, handleOverlay, handleSubmit, handleAdopted, animal, user} = props.formCardProps;
+export default function FormCard(props:FormCardProps) {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [newUser, setNewUser] = useState<User>({fullName: '', email: '', adress: '', zipcode: 12345, about: '', extra: '', userId: 0});
 
     const handleFormInput: (e:any) => void = (e:any) => {
         const {name, value } = e.target;
-        setUser((prevUser: User) => ({...prevUser, [name]: value}));
+        setNewUser((prevUser: User) => ({...prevUser,[name]: value}));   
     };
+
+    const handleSubmit: (e:any) => void = (e:any) => {
+        e.preventDefault();        
+        dispatch(chosenActions.choseAnimal(props.animal));
+        setNewUser((prevUser: User) => ({...prevUser, userId: Math.floor(Math.random() * 1000)})); 
+        dispatch(userActions.addUser(newUser));
+        navigate('/confirmed');
+    };
+
+    const handleAdopted = (animalId: number, userId: number) => {
+        let adopted: Adopted = {
+            userId: userId,
+            animalId: animalId
+        };
+        dispatch(adoptedActions.addAdopted(adopted));
+  };
 
     return (
         <section className="form-container">
             <div className="form-header">
                 <h2>Form</h2>
-                <div className='btn-close' onClick={handleOverlay}>
-                        <div></div>
-                        <div></div>
+                <div className='btn-close' onClick={props.handleOverlay}>
+                    <div></div>
+                    <div></div>
                 </div>
             </div>
             <form onSubmit={handleSubmit}>
@@ -57,7 +75,7 @@ export default function FormCard(props: FormCardProps) {
                     <label htmlFor="extra">Övrig information</label>
                     <textarea name="extra" id="extra"  cols={30} rows={8} onChange={(e) => handleFormInput(e)}></textarea>
                 </div>            
-                <button type="submit" onClick={() => handleAdopted(animal.animalId, user.userId)} className='btn btn-form'>Skicka</button>
+                <button type="submit" onClick={() => handleAdopted(props.animal.animalId, newUser.userId)} className='btn btn-form'>Skicka</button>
             </form>
         </section>
     )

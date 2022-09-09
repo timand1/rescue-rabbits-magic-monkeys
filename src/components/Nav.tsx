@@ -1,15 +1,12 @@
-import { useNavigate, NavLink } from 'react-router-dom';
-import logo from '../assets/LOGO.png'
-import { useState } from 'react';
-import {Animal} from '../models/data';
-import data from '../data/data.json';
 import '../styles/_nav.scss';
+import logo from '../assets/LOGO.png'
+import { useNavigate, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { actions as animalActions } from '../features/animalReducer';
 
-interface NavProps {
-    setAnimals: (animal: Animal[]) => void;
-};
-
-export default function Nav(props: NavProps) { 
+export default function Nav() { 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
@@ -43,7 +40,7 @@ export default function Nav(props: NavProps) {
     };
 
     const showAll: () => void = () => {
-        props.setAnimals(data.animals);
+        dispatch(animalActions.allAnimals())
     };
 
     return (         

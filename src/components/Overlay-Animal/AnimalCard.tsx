@@ -1,16 +1,18 @@
 import { Animal, Adopted } from '../../models/data';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../../store';
 
 interface AnimalCardProps {
     animal: Animal;
     handleOverlay: () => void;
     handleForm: () => void;
-    adoptedList: Adopted[];
 };
 
 export default function AnimalCard(props: AnimalCardProps) {
     const { name, image, gender, age, species, breed, date, about, location, diseases, vaccinationer } = props.animal;
 
-    const findAdopted: boolean = props.adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
+    const adoptedList = useSelector((state: RootState) => state.adoptedList)
+    const findAdopted: boolean = adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
     const buttonCSS : string = findAdopted ? ' btn-booked' : '';
 
     return (

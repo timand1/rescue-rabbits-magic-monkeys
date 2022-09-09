@@ -1,17 +1,12 @@
 import { useState } from 'react';
-import { Animal } from '../models/data';
-import data from '../data/data.json';
 import '../styles/_search.scss';
-import animalList from '../data/data.json'
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store';
+import { actions as animalActions } from '../features/animalReducer'
+import jsonData from '../data/data.json'
 
-interface SearchProps {
-    animals: Animal[];
-    setAnimals: (animal: Animal[]) => void;
-    searchAnimals: (searchParam: string) => void;
-    searchMultiple: (searchParam: string) => void;
-};
-
-export default function Search(props: SearchProps) {  
+export default function Search() {  
+    const dispatch = useDispatch();
     const [searchInput, setSearchInput] = useState<string>('');
 
     const handleSearch: (e:any) => void = (e:any) => {
@@ -26,24 +21,25 @@ export default function Search(props: SearchProps) {
 
     const searchType: (searchInput: string) => void = (searchInput : string) => {
         if(searchInput.length > 5 && searchInput.includes(' ')) {
-            props.searchMultiple(searchInput);
+            dispatch(animalActions.multipleSearchAnimals(searchInput))
         } else {
-            props.searchAnimals(searchInput);
+            dispatch(animalActions.singleSearchAnimals(searchInput))
         }
     };    
 
     const showAll: () => void = () => {
-
-        props.setAnimals(data.animals);
+        dispatch(animalActions.allAnimals())
     };    
     
     const preventRefresh: (e:any) => void = (e:any) => {        
         e.preventDefault();
     }
 
+    const animalList = useSelector((state: RootState) => state.animals);
+    
     let resetSearch: boolean = false;
 
-    if(animalList.animals.length > props.animals.length) {
+    if(animalList.length < jsonData.animals.length) {
         resetSearch = true;
     }
 
@@ -53,9 +49,8 @@ export default function Search(props: SearchProps) {
                 <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' onKeyUp={(e) => {handleSearch(e)}} />
                 {resetSearch &&
                     <input className='cancel-search' type="reset" onClick={showAll} value="&#128473;" />
-
                 }
-                <button className='search-btn' onClick={(e) => props.searchAnimals(searchInput)}>SÖK</button>
+                <button className='search-btn' onClick={(e) => searchType(searchInput)}>SÖK</button>
             </div>                          
         </form>       
     )

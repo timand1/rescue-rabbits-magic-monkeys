@@ -1,8 +1,10 @@
 import '../styles/About.scss';
 import  logo  from '../assets/LOGO.png';
-
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState } from '../store';
 function About() {
-
+    const adoptedList = useSelector((state: RootState) => state.adoptedList)
+    console.log(adoptedList)
     return (
         <article className="about">
             <h1>OM OSS</h1>
