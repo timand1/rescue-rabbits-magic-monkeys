@@ -17,78 +17,40 @@ const reducer = createReducer(initialState, {
     [singleSearchAnimals.toString()]: (state, action) => {
         const arrCopy = [...initialState]
         const searchArr : Animal[] = [];
-        let searchString = action.payload;
 
-        arrCopy.forEach((animal:any) => {               
-            Object.values(animal).forEach((animalInfo:any) => {
-                if(searchString.match(/\d+/g)) {        
-                    if(searchString.includes(' ')) {
-                        const index = searchString.indexOf(' ');
-                        searchString = searchString.substring(0, index);                
-                    };
-                    if(animalInfo == searchString) {
-                        searchArr.push(animal)   
-                    };
-                } else {
-                    if(typeof animalInfo === 'string') {
-                        const searching:number = animalInfo.search((new RegExp(searchString, "i")));
-                        if(searching != -1) {
-                            searchArr.push(animal);    
-                        } 
-                    };
-                }       
-            });
-            
-        });
-        
-        const filteredSearch:Array<Animal> = searchArr.filter(
-            (search : any, index: number, searches: any) => 
-            searches.findIndex((b:any) => b.name === search.name) === index);
-
-        return filteredSearch;
-
+        arrCopy.forEach(animal => {
+            if(animal.searchWords.includes(action.payload)) {
+                searchArr.push(animal)
+            }
+        })
+        return searchArr;
     },
     [multipleSearchAnimals.toString()]: (state, action) => {
-        const arrCopy = [...initialState];
+        let arrCopy = [...initialState];
         const searchArr : Animal[] = [];
-        const arrSearch:Animal | any = [];
-        let searchString = action.payload;
-        
-        arrCopy.forEach((animal:any) => {               
-            Object.values(animal).forEach((animalInfo:any) => {
-                const searchSplit = searchString.split(' ');
-                if(searchSplit.length > 2 && searchSplit.includes('år')) {
-                    const index = searchSplit.indexOf('år');
-                    searchSplit.splice(index, 1);
-                };
-                searchSplit.forEach((search: string) => {
-                    if(search.match(/\d+/g) && animal.age == search) {
-                        searchArr.push(animal);
-                    } else if(typeof search == 'string') {
-                        search = search[0].toUpperCase()+ search.slice(1)
-                    } else if(animal.age == search) {
-                        searchArr.push(animal);
-                    };
 
-                    if(search === animalInfo) {
-                        arrSearch.push(animal);
-                        if(searchSplit.length == arrSearch.length) {
-                            searchArr.push(animal);
-                        };
-                    };
-                });
-            });
-        });
+        const searchWordsArr = action.payload.split(' ')
+        if(searchWordsArr.includes('år')) {
+            const index = searchWordsArr.indexOf('år')
+            searchWordsArr.splice(index, 1);
+        }
+        console.log(searchWordsArr);
+        arrCopy.forEach(animal => {
+            let searchHit = 0;
+            searchWordsArr.forEach((word : string) => {
+                if(animal.searchWords.includes(word)) {
+                    searchHit = searchHit + 1;
+                    console.log(searchWordsArr);
+                    if(searchHit == searchWordsArr.length) {
+                        searchArr.push(animal)
+                    }
+                }
+            })
 
-        const filteredSearch:Array<Animal> = searchArr.filter(
-            (search : any, index: number, searches: any) => 
-            searches.findIndex((b:any) => b.name === search.name) === index);
+        })
+        return searchArr
 
-        return filteredSearch;
-
-    }
- 
-
+    }  
 })
 
 export { reducer, actions }

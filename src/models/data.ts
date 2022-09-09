@@ -12,6 +12,7 @@ export interface Animal {
     vaccinationer: string;
     children: string;
     animalId: number;
+    searchWords: Array<string>;
 };
 
 export interface User {
