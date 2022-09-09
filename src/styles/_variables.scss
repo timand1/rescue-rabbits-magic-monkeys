@@ -28,7 +28,7 @@ $mobile-card-width: 90vw;
 
 @mixin textContainer() {
     background-color: $secondary-bg;
-    padding: 3rem;
+    padding: 1rem;
     font-family: $primary-font;
     font-size: 1em;
     line-height: 1.5em;
@@ -46,8 +46,7 @@ $mobile-card-width: 90vw;
 }
 
 @mixin aboutPageLayout() {
-    max-width: 35rem;
-    width: 100%;
+    max-width: 50vw;
     margin: 0 auto;
     @include flexContainer();
     align-items: center;
@@ -62,9 +61,6 @@ $mobile-card-width: 90vw;
         @include textContainer;
         padding-bottom: 8em;
         position: relative;
-        figure {
-            @extend %bg-image;
-            transition: .5s all;
-        }
+        box-shadow: $box-shadow;
     }
 }

@@ -4,15 +4,12 @@
     @include variables.aboutPageLayout();
         .quote {
             font-style: italic;
-        }
-
-    
-    
+        }    
 }
 
 @media only screen and (max-width: 786px) {
     .about {
-        max-width: 90%;
+        max-width: variables.$mobile-card-width;
         section {
             padding-bottom: 4em;
         }

@@ -40,7 +40,7 @@ export default function FormCard(props:FormCardProps) {
     return (
         <section className="form-container">
             <div className="form-header">
-                <h2>Form</h2>
+                <h2>Dina uppgifter</h2>
                 <div className='btn-close' onClick={props.handleOverlay}>
                     <div></div>
                     <div></div>

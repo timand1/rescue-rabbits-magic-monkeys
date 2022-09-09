@@ -43,7 +43,11 @@
 }
 
 @media only screen and (max-width: 786px) {    
-    .search{ 
+    .search-container {
         width: variables.$mobile-card-width;
-    }    
+
+        .search{ 
+            width: 100%;
+        }    
+    }
 }
