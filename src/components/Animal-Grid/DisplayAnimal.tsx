@@ -1,6 +1,6 @@
-import { Animal, Adopted, User } from '../../models/data';
+import { Animal } from '../../models/data';
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import Overlay from '../Overlay-Animal/Overlay';
 

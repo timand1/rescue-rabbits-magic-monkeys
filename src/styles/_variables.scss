@@ -1,13 +1,14 @@
 $primary-bg: #f3f3f3;
 $secondary-bg: #e6e4e4;
-$fontColor: #000000;
-$adoptedColor: #975252;
-$continueColor: #358f4e;
-$navColor: #FFFFFF;
+$font-color: #000000;
+$adopted-color: #975252;
+$continue-color: #358f4e;
+$nav-color: #FFFFFF;
 $hero-text-color: #dad0ee;
 $primary-font: 'Roboto', sans-serif;
 $header-font: 'Jost', sans-serif;
 $box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
+$mobile-card-width: 90vw;
 
 %app-size {
     max-width: 70vw;
@@ -67,6 +68,3 @@ $box-shadow: 9px 10px 0px rgba(0, 0, 0, 0.34);
         }
     }
 }
-
-
-

@@ -18,8 +18,7 @@
 
     .footer-box{
 
-        .footer-header{
-            
+        .footer-header{            
             font-family: variables.$primary-font;
             font-size: 1.3rem;
             margin-bottom: .5rem;
@@ -27,20 +26,19 @@
             .footer-info{
                 font-size: .8rem;
             }
-        }
     }
-
+}
 
 @media only screen and (max-width: 786px) {
-    .footer{
+    .footer {
         flex-direction: column;
         gap: 0;
+        h2 {
+            transition: .1s all;
+            transform: scale(80%);
+        }
+        p {
+            display: none;
+        }     
     }    
-    .footer h2{
-        transition: .1s all;
-        transform: scale(80%);
-    }
-    .footer p{
-        display: none;
-    }       
   }

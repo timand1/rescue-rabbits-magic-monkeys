@@ -1,4 +1,4 @@
-import { Animal, User, Adopted } from '../../models/data';
+import { Animal } from '../../models/data';
 import DisplayAnimal from './DisplayAnimal';
 import Search from '../Search';
 import '../../styles/AnimalList.scss';
@@ -10,8 +10,6 @@ function AnimalList() {
     const animals:Animal[] = useSelector((state: RootState) => state.animals);
  
     const singleAnimal = animals.map((animal) => <DisplayAnimal key={animal.animalId} animal={animal} />);
-
-
     
     return (
         <section className='animal-container'>                      

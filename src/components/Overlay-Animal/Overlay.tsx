@@ -1,3 +1,4 @@
+import '../../styles/_overlay.scss';
 import { Animal } from '../../models/data';
 import AnimalCard from './AnimalCard';
 import FormCard from './FormCard';

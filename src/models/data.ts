@@ -10,6 +10,7 @@ export interface Animal {
     location: string;
     diseases: string;
     vaccinationer: string;
+    children: string;
     animalId: number;
 };
 

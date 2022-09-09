@@ -1,5 +1,5 @@
-import { Animal, Adopted } from '../../models/data';
-import { useSelector, useDispatch } from 'react-redux';
+import { Animal } from '../../models/data';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 
 interface AnimalCardProps {
@@ -9,7 +9,7 @@ interface AnimalCardProps {
 };
 
 export default function AnimalCard(props: AnimalCardProps) {
-    const { name, image, gender, age, species, breed, date, about, location, diseases, vaccinationer } = props.animal;
+    const { name, image, gender, age, species, breed, date, about, location, diseases, vaccinationer, children } = props.animal;
 
     const adoptedList = useSelector((state: RootState) => state.adoptedList)
     const findAdopted: boolean = adoptedList.find(adopted => adopted.animalId === props.animal.animalId) !== undefined;
@@ -25,35 +25,35 @@ export default function AnimalCard(props: AnimalCardProps) {
                 <p>{date}</p>
             </figure>
             <div className="animal-info">
-                <h2>{name}</h2>
+                <h2>{name}<span>, {species}</span></h2>
                 <p>{about}</p>
-                <div>
-                    <p className='sub-headline'>Djursort : </p>
-                    <p>{species}</p>
-                </div>
                 <div>
                     <p className='sub-headline'>Kön : </p>
                     <p>{gender}</p>
-                </div>
-                <div>
-                    <p className='sub-headline'>Ras : </p>
-                    <p>{breed}</p>
                 </div>
                 <div>
                     <p className='sub-headline'>Ålder : </p>
                     <p>{age} år</p>
                 </div>
                 <div>
+                    <p className='sub-headline'>Ras : </p>
+                    <p>{breed}</p>
+                </div>
+                <div>
                     <p className='sub-headline'>Plats : </p>
                     <p>{location}</p>
+                </div>
+                <div>
+                    <p className='sub-headline'>Vaccin : </p>
+                    <p>{vaccinationer}</p>
                 </div>
                 <div>
                     <p className='sub-headline'>Sjukdomar : </p>
                     <p>{diseases}</p>
                 </div>
                 <div>
-                    <p className='sub-headline'>Vaccinationer : </p>
-                    <p>{vaccinationer}</p>
+                    <p className='sub-headline'>Barnvänlig : </p>
+                    <p>{children}</p>
                 </div>
                 <button className={'btn' + buttonCSS} onClick={!findAdopted ? props.handleForm : undefined}> {findAdopted ? 'Bokad' : 'Adoptera' }</button>
             </div>

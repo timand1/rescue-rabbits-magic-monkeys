@@ -16,15 +16,17 @@ export default function Search() {
             if(e.key === 'Enter' && searchInput.length >= 1) {
                 searchType(value);
             }
-        }
+        } else { return }
     }
 
     const searchType: (searchInput: string) => void = (searchInput : string) => {
-        if(searchInput.length > 5 && searchInput.includes(' ')) {
-            dispatch(animalActions.multipleSearchAnimals(searchInput))
-        } else {
-            dispatch(animalActions.singleSearchAnimals(searchInput))
-        }
+        if(searchInput.length > 0) {
+            if(searchInput.length > 5 && searchInput.includes(' ')) {
+                dispatch(animalActions.multipleSearchAnimals(searchInput))
+            } else {
+                dispatch(animalActions.singleSearchAnimals(searchInput))
+            }
+        } else { return }
     };    
 
     const showAll: () => void = () => {

@@ -9,14 +9,14 @@ header {
     left: 0;
     width: 100%;
     min-height: 10vh;
-    background-color: variables.$fontColor;
+    background-color: variables.$font-color;
     z-index: 10;
     box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.13);
     .logo-container {
         @include variables.flexContainer(row);
         align-items: center;
         gap: 2em;
-        color: variables.$navColor;
+        color: variables.$nav-color;
         .logo {
             max-width: 10vw;
             max-height: 5vh;
@@ -42,7 +42,7 @@ header {
             .link {
                 font-size: 1.2rem;
                 position: relative; 
-                color: variables.$navColor;
+                color: variables.$nav-color;
                 text-decoration: none;
                 &:hover::after {
                     opacity: 1;
@@ -55,7 +55,7 @@ header {
                     width: 100%;
                     height: 8px;
                     opacity: 0;
-                    background: variables.$adoptedColor;   
+                    background: variables.$adopted-color;   
                     transition: all 300ms ease-in-out;     
                 }
             }   
