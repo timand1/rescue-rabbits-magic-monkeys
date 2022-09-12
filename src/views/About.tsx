@@ -1,6 +1,6 @@
 import '../styles/About.scss';
 import  logo  from '../assets/LOGO.png';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { RootState } from '../store';
 function About() {
     const adoptedList = useSelector((state: RootState) => state.adoptedList)

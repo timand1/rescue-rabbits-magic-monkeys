@@ -1,6 +1,6 @@
-import { createAction, createReducer } from '@reduxjs/toolkit'
-import { Adopted } from '../models/data'
-import jsonData from '../data/data.json'
+import { createAction, createReducer } from '@reduxjs/toolkit';
+import { Adopted } from '../models/data';
+import jsonData from '../data/data.json';
 
 const initialState : Adopted[] = jsonData.adopted;
 
@@ -14,6 +14,6 @@ const reducer = createReducer(initialState, {
         return newAdoptedList;
     }
 
-})
+});
 
-export { reducer, actions }
+export { reducer, actions };

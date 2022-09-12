@@ -2,8 +2,8 @@ import { useState } from 'react';
 import '../styles/_search.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { actions as animalActions } from '../features/animalReducer'
-import jsonData from '../data/data.json'
+import { actions as animalActions } from '../features/animalReducer';
+import jsonData from '../data/data.json';
 
 export default function Search() {  
     const dispatch = useDispatch();
@@ -17,20 +17,20 @@ export default function Search() {
                 searchType(value);
             }
         } else { return }
-    }
+    };
 
     const searchType: (searchInput: string) => void = (searchInput : string) => {
         if(searchInput.length > 0) {
             if(searchInput.length > 5 && searchInput.includes(' ')) {
-                dispatch(animalActions.multipleSearchAnimals(searchInput))
+                dispatch(animalActions.multipleSearchAnimals(searchInput));
             } else {
-                dispatch(animalActions.singleSearchAnimals(searchInput))
+                dispatch(animalActions.singleSearchAnimals(searchInput));
             }
         } else { return }
     };    
 
     const showAll: () => void = () => {
-        dispatch(animalActions.allAnimals())
+        dispatch(animalActions.allAnimals());
     };    
     
     const preventRefresh: (e:any) => void = (e:any) => {        

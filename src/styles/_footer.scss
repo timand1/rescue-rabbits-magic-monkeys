@@ -9,36 +9,38 @@
     justify-content: center;
     align-items: center ;
     text-align: center;   
-}
-    
-.footer{
-    @include variables.flexContainer(row);
-    transition: .1s all;    
-    gap: 2rem;
 
-    .footer-box{
-
+    .footer {
+        @include variables.flexContainer(row);
+        transition: .1s all;    
+        gap: 2rem;
+   
         .footer-header{            
             font-family: variables.$primary-font;
-            font-size: 1.3rem;
+            font-size: 1.3em;
             margin-bottom: .5rem;
-            }
-            .footer-info{
-                font-size: .8rem;
-            }
+        }
+        .footer-info{
+            font-size: .8rem;
+        }
     }
 }
+    
 
 @media only screen and (max-width: 786px) {
-    .footer {
-        flex-direction: column;
-        gap: 0;
-        h2 {
-            transition: .1s all;
-            transform: scale(80%);
-        }
-        p {
-            display: none;
-        }     
-    }    
-  }
+    .footer-container{  
+        .footer {
+            flex-direction: column;
+            gap: 0;
+            margin: 0 1em;
+            
+            h2 {
+                transition: .1s all;
+                transform: scale(80%);
+            }
+            p {
+                display: none;
+            }     
+        } 
+    }   
+}

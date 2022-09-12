@@ -10,7 +10,7 @@ const actions = { addUser };
 const reducer = createReducer(initialState, {
     [addUser.toString()]: ( state, action) => {
         state = action.payload;
-        return state
+        return state;
     }
 });
 

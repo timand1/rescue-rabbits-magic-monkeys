@@ -10,12 +10,14 @@ html,
   margin: 0;
   box-sizing: border-box;
   font-family: variables.$primary-font;
+
   body {
     background-color: variables.$primary-bg;
     color: variables.$font-color;
     font-family: variables.$primary-font;
     display:flex;
     min-height: 100vh;
+    
     .App {
         height: 100%;
         overflow-x: hidden;

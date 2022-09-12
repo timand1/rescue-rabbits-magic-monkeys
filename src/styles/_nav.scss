@@ -12,11 +12,13 @@ header {
     background-color: variables.$font-color;
     z-index: 10;
     box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.13);
+
     .logo-container {
         @include variables.flexContainer(row);
         align-items: center;
         gap: 2em;
         color: variables.$nav-color;
+
         .logo {
             max-width: 10vw;
             max-height: 5vh;
@@ -33,12 +35,14 @@ header {
         width: 100%;        
         background: transparent;
         transform: translateX(0); 
+
         .link-container {   
             list-style: none;
             display: flex;
             justify-content: flex-end;
             gap: 4em;   
             margin-right: 2em; 
+            
             .link {
                 font-size: 1.2rem;
                 position: relative; 

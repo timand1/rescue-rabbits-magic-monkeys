@@ -1,8 +1,8 @@
-import { createAction, createReducer } from '@reduxjs/toolkit'
-import { Animal } from '../models/data'
-import jsonData from '../data/data.json'
+import { createAction, createReducer } from '@reduxjs/toolkit';
+import { Animal } from '../models/data';
+import jsonData from '../data/data.json';
 
-const initialState : Animal[] = jsonData.animals
+const initialState : Animal[] = jsonData.animals;
 
 const allAnimals = createAction('Get all animals');
 const singleSearchAnimals = createAction<string>('One word search animals');
@@ -33,24 +33,21 @@ const reducer = createReducer(initialState, {
         if(searchWordsArr.includes('år')) {
             const index = searchWordsArr.indexOf('år')
             searchWordsArr.splice(index, 1);
-        }
-        console.log(searchWordsArr);
+        };
         arrCopy.forEach(animal => {
             let searchHit = 0;
             searchWordsArr.forEach((word : string) => {
                 if(animal.searchWords.includes(word)) {
                     searchHit = searchHit + 1;
-                    console.log(searchWordsArr);
                     if(searchHit == searchWordsArr.length) {
-                        searchArr.push(animal)
+                        searchArr.push(animal);
                     }
                 }
             })
-
         })
-        return searchArr
+        return searchArr;
 
-    }  
-})
+    }
+});
 
-export { reducer, actions }
+export { reducer, actions };
