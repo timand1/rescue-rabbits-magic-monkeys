@@ -10,7 +10,7 @@ export default function Search() {
     const [searchInput, setSearchInput] = useState<string>('');
 
     const handleSearch: (e:any) => void = (e:any) => {
-        const value : string = e.target.value;
+        const value : string = e.target.value.toLowerCase();
         if(value.length > 0) {
             setSearchInput(value);
             if(e.key === 'Enter' && searchInput.length >= 1) {

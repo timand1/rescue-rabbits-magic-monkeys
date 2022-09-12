@@ -12,7 +12,7 @@ const actions = { allAnimals, singleSearchAnimals, multipleSearchAnimals };
 
 const reducer = createReducer(initialState, {
     [allAnimals.toString()]: () => {
-        return initialState
+        return initialState;
     },
     [singleSearchAnimals.toString()]: (state, action) => {
         const arrCopy = [...initialState]
@@ -35,7 +35,7 @@ const reducer = createReducer(initialState, {
             searchWordsArr.splice(index, 1);
         };
         arrCopy.forEach(animal => {
-            let searchHit = 0;
+            let searchHit: number = 0;
             searchWordsArr.forEach((word : string) => {
                 if(animal.searchWords.includes(word)) {
                     searchHit = searchHit + 1;

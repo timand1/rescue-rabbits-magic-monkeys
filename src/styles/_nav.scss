@@ -32,7 +32,7 @@ header {
     }
     .nav {
         position: fixed;
-        width: 100%;        
+        width: 100%;    
         background: transparent;
         transform: translateX(0); 
 
@@ -42,7 +42,7 @@ header {
             justify-content: flex-end;
             gap: 4em;   
             margin-right: 2em; 
-            
+
             .link {
                 font-size: 1.2rem;
                 position: relative; 
@@ -113,7 +113,6 @@ header {
             transform: translateX(100%);
             transition: 300ms ease-in-out;
             .link-container {   
-                margin: 1rem 5rem;
                 flex-direction: column;
             }
         }
