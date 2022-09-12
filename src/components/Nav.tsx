@@ -17,6 +17,10 @@ export default function Nav() {
     const changeUrl: () => void = () => {
         showAll()
         setMenuOpen(false)
+        const root:any = document.querySelector('#root');
+        root.scrollIntoView({
+            behavior: 'smooth'
+          });
     };
 
     const handleHome: () => void = () => {
