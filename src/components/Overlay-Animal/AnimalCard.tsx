@@ -22,7 +22,7 @@ export default function AnimalCard(props: AnimalCardProps) {
                     <div></div>
                     <div></div>
                 </div>
-                <p>{date}</p>
+                <p>&#x1F4C5; {date}</p>
             </figure>
             <div className="animal-info">
                 <h2>{name}<span>, {species}</span></h2>

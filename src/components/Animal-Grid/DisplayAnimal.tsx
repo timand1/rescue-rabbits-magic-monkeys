@@ -30,7 +30,7 @@ const DisplayAnimal = (props: DisplayAnimalProps) => {
     return (
         <section className='card'>
             <figure style={{ backgroundImage: `url(${image})`}}>
-            <p>{date}</p>
+            <p>&#x1F4C5; {date}</p>
             </figure>
             <section className="text-container"> 
                 <div className='card-headline'>
