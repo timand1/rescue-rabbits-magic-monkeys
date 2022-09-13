@@ -15,7 +15,8 @@
         transition: .1s all;    
         gap: 2rem;
    
-        .footer-header{            
+        .footer-header{          
+            cursor: pointer;  
             font-family: variables.$primary-font;
             font-size: 1.3em;
             margin-bottom: .5rem;
