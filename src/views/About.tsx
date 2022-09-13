@@ -1,5 +1,6 @@
 import '../styles/About.scss';
 import  logo  from '../assets/LOGO.png';
+import  animalPic from '/hero.jpg'
 
 function About() {
 
@@ -7,11 +8,11 @@ function About() {
         <article className="about">
             <h1>OM OSS</h1>
             <section>
-                <h2>Vårt mål är .... </h2>
-                <p>Webbappen ska presentera alla djur väntar på en ny ägare. 
-                Det behöver finnas en lista, där man kan se många, samt en vy där man kan titta närmare på ett djur. 
-                Man ska även kunna söka. Om användaren vill adoptera ett djur, ska det finnas ett formulär för att samla in relevant information. Djur som blivit "bokade" ska förstås inte gå att boka igen, men de kan fortfarande visas i listan</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe nostrum neque eum sequi, tempora nesciunt ullam dolorum quasi vitae, in molestias impedit similique. Atque neque molestiae numquam odit facere reprehenderit?</p>
+                <h2>Rescue Rabbits </h2>
+                <p>Rescue Rabbits mål är att alla djur överallt ska få ha ett bra liv utan våld, sjukdomar och hunger.</p>
+                <p>Vi räddar djur i nöd för att sedan para ihop djuren med en ny familj där de kan leva lyckliga livet ut med mycket kärlek.</p>
+                <p>Våran analys för att para ihop djur och person är väldigt genomgående för att båda parter ska bli nöjda.</p>
+                <img className='about-image' src={animalPic} alt="dog" />
                 <p className='quote'>Protect, rescue, adopt, repeat - Felix 2022</p>
                 <figure style={{ backgroundImage: `url(${logo})` }}></figure>
             </section>

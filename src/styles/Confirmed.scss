@@ -2,6 +2,9 @@
 
 .confirmed {
     @include variables.aboutPageLayout();
+    section {
+        gap: 2em;
+    }
     h2 {
         text-align: center;
     }
