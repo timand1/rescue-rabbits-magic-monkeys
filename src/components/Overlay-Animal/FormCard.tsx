@@ -35,6 +35,10 @@ export default function FormCard(props:FormCardProps) {
             animalId: animalId
         };
         dispatch(adoptedActions.addAdopted(adopted));
+        const root:any = document.querySelector('#root');
+        root.scrollIntoView({
+            behavior: 'smooth'
+          });
   };
 
     return (
