@@ -40,7 +40,7 @@ export default function FormCard(props:FormCardProps) {
     return (
         <section className="form-container">
             <div className="form-header">
-                <h2>Dina uppgifter</h2>
+                <h2>Uppgifter</h2>
                 <div className='btn-close' onClick={props.handleOverlay}>
                     <div></div>
                     <div></div>
@@ -68,12 +68,8 @@ export default function FormCard(props:FormCardProps) {
                     <input type="number" id='zipcode' name='zipcode' required placeholder='12345' min={10000} max={99999} onChange={(e) => handleFormInput(e)}/>
                 </div>
                 <div className="input-container">
-                    <label htmlFor="about">Om dig</label>
-                    <textarea name="about" id="about" cols={30} rows={8} onChange={(e) => handleFormInput(e)}></textarea>
-                </div>
-                <div className="input-container">
                     <label htmlFor="extra">Övrig information</label>
-                    <textarea name="extra" id="extra"  cols={30} rows={8} onChange={(e) => handleFormInput(e)}></textarea>
+                    <textarea name="extra" id="extra"  cols={30} rows={5} onChange={(e) => handleFormInput(e)}></textarea>
                 </div>            
                 <button type="submit" onClick={() => handleAdopted(props.animal.animalId, newUser.userId)} className='btn btn-form'>Skicka</button>
             </form>

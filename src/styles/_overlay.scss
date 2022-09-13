@@ -19,7 +19,7 @@
         @include variables.flexContainer();
         border-radius: 1em;
         box-shadow: variables.$box-shadow;
-        max-height: 80%;
+        max-height: 100%;
 
         figure {
             justify-content: space-between;
@@ -64,8 +64,7 @@
         background-color: variables.$secondary-bg;
         padding: 2em;
         box-shadow: variables.$box-shadow;
-        max-height: 80%;
-        overflow-y: scroll;
+        max-height: 100%;
         
         .form-header {
             @include variables.flexContainer(row); 
@@ -95,6 +94,9 @@
             z-index: 100;
             .animal-container {
                 max-height: 100%;
+                overflow-y: scroll;
+            }
+            .form-container {
                 overflow-y: scroll;
             }
         }
