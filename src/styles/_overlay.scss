@@ -50,6 +50,7 @@
             }
             .btn-booked {
                 @include buttons.button(variables.$adopted-color, variables.$primary-bg);
+                
                 &:hover {
                     cursor: auto;
                     transform: none;
@@ -83,11 +84,12 @@
     } 
     button {
         @include buttons.button(variables.$continue-color, variables.$secondary-bg);
+        margin: 1em 0;
         align-self: center;  
     }
 }
 
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 820px) {
     .animals {
         .overlay {            
             z-index: 100;
