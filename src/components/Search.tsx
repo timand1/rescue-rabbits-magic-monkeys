@@ -31,10 +31,11 @@ export default function Search() {
 
     const showAll: () => void = () => {
         dispatch(animalActions.allAnimals());
+        setSearchInput('');
     };    
     
     const preventRefresh: (e:any) => void = (e:any) => {        
-        e.preventDefault();
+        e.preventDefault();        
     }
 
     const animalList = useSelector((state: RootState) => state.animals);
@@ -48,7 +49,7 @@ export default function Search() {
     return (
         <form className='search-container' onSubmit={preventRefresh}>
             <div className='search'>
-                <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' onKeyUp={(e) => {handleSearch(e)}} />
+                <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' value={searchInput} onChange={(e) => {handleSearch(e)}} />
                 {resetSearch &&
                     <input className='cancel-search' type="reset" onClick={showAll} value="&#128473;" />
                 }
