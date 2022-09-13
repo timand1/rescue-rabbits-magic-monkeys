@@ -13,7 +13,7 @@
             "diseases": "-",
             "vaccinationer": "Alla",
             "children": "Nej",
-            "searchWords": ["hund", "hane", "2", "2år", "2 år", "border collie", "border", "collie", "corona", "2022", "karlstad", "bert"],
+            "searchWords": ["hund", "hane", "2", "2år", "2 år", "border collie","bordercollie", "border", "collie", "corona", "2022", "karlstad", "bert"],
             "animalId": 1
         },
         {
@@ -29,7 +29,7 @@
             "diseases": "-",
             "vaccinationer": "Alla",
             "children": "Ja, alla",
-            "searchWords": ["katt","kattrin", "hona", "8", "8år", "8 år", "bondkatt", "sommarkatt", "stockholm", "barn", "2017"],
+            "searchWords": ["katt","kattrin", "hona", "8", "8år", "8 år", "bondkatt", "sommarkatt", "stockholm", "barn", "2017", "barnvänlig"],
             "animalId": 2
         },
         {
@@ -45,7 +45,7 @@
             "diseases": "Stockholmare",
             "vaccinationer": "För stelkramp",
             "children": "Ja, alla",
-            "searchWords": ["häst", "hane", "4", "4år", "4 år", "shetland", "shetlandsponny", "hemlös", "stockholm", "2020", "stelkramp", "barn", "harry"],
+            "searchWords": ["häst", "hane", "4", "4år", "4 år", "shetland", "shetlandsponny", "hemlös", "stockholm", "2020", "stelkramp", "barn", "harry", "barnvänlig"],
             "animalId": 3
         },
         {
@@ -60,8 +60,8 @@
             "location": "Göteborg",
             "diseases": "Rabies, tandproblem",
             "vaccinationer": "Inga",
-            "children": "Ja, över 10 år",
-            "searchWords": ["hund", "hane", "5", "5år", "5 år", "shiba", "rabies", "tandproblem", "göteborg", "2018", "doge", "barn"],
+            "children": "Nej",
+            "searchWords": ["hund", "hane", "5", "5år", "5 år", "shiba", "rabies", "tandproblem", "göteborg", "2018", "doge"],
             "animalId": 4
         },
         {
@@ -77,7 +77,7 @@
             "diseases": "-",
             "vaccinationer": "Alla",
             "children": "Ja, över 5 år",
-            "searchWords": ["hund", "hane", "12", "12år", "12 år", "pitbull", "göteborg", "2010", "kalle", "barn"],
+            "searchWords": ["hund", "hane", "12", "12år", "12 år", "pitbull", "göteborg", "2010", "kalle", "barn", "barnvänlig"],
             "animalId": 5
         },
         {
@@ -125,7 +125,7 @@
             "diseases": "Flintskallig",
             "vaccinationer": "Alla",
             "children": "Ja, alla",
-            "searchWords": ["katt", "hona", "2", "2år", "2 år", "sphynx", "naken", "nakenkatt", "stockholm", "2022", "wilma", "flintskalling", "barn"],
+            "searchWords": ["katt", "hona", "2", "2år", "2 år", "sphynx", "naken", "nakenkatt", "stockholm", "2022", "wilma", "flintskalling", "barn", "barnvänlig"],
             "animalId": 8
         },
         {
@@ -141,7 +141,7 @@
             "diseases": "-",
             "vaccinationer": "Inga",
             "children": "Ja, över 5 år",
-            "searchWords": ["katt", "hona", "3", "3år", "3 år", "bondkatt", "karlstad", "2021", "margit", "barn", "corona", "munskydd"],
+            "searchWords": ["katt", "hona", "3", "3år", "3 år", "bondkatt", "karlstad", "2021", "margit", "barn", "corona", "munskydd", "barnvänlig"],
             "animalId": 9
         },
         {
@@ -157,10 +157,15 @@
             "diseases": "Skrattsjukan",
             "vaccinationer": "Inga",
             "children": "Ja, över 10 år",
-            "searchWords": ["häst", "hona", "3", "3år", "3 år", "aegidienberger", "karlstad", "2021", "hästrid", "skratt", "skrattsjukan", "barn"],
+            "searchWords": ["häst", "hona", "3", "3år", "3 år", "aegidienberger", "karlstad", "2021", "hästrid", "skratt", "skrattsjukan", "barn", "barnvänlig"],
             "animalId": 10
         }
         
     ],
-    "adopted": []
+    "adopted": [
+        {
+            "animalId": 3,
+            "userId": 124
+        }
+    ]
 }
