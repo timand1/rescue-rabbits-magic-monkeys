@@ -34,6 +34,7 @@ export default function Nav() {
     };
 
    const scrollToAnimals: () => void = () => {
+        showAll();
         setMenuOpen(false);
         setTimeout(() => {
             const divider:any = document.querySelector('#divider');
