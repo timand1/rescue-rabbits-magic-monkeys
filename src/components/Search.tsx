@@ -51,7 +51,7 @@ export default function Search() {
             <div className='search'>
                 <input className='search-form' type="text" placeholder='Sök efter ras, ålder eller plats' value={searchInput} onChange={(e) => {handleSearch(e)}} />
                 {resetSearch &&
-                    <input className='cancel-search' type="reset" onClick={showAll} value="&#128473;" />
+                    <input className='cancel-search' type="reset" onClick={showAll} value="X" />
                 }
                 <button className='search-btn' onClick={(e) => searchType(searchInput)}>SÖK</button>
             </div>                          
