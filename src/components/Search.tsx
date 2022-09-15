@@ -10,21 +10,20 @@ export default function Search() {
     const [searchInput, setSearchInput] = useState<string>('');
 
     const handleSearch: (e:any) => void = (e:any) => {
-        const value : string = e.target.value.toLowerCase();
-        if(value.length > 0) {
+        const value : string = e.target.value
             setSearchInput(value);
             if(e.key === 'Enter' && searchInput.length >= 1) {
                 searchType(value);
             }
-        } else { return }
     };
 
     const searchType: (searchInput: string) => void = (searchInput : string) => {
         if(searchInput.length > 0) {
+            const searchLowerCase = searchInput.toLowerCase();
             if(searchInput.length > 5 && searchInput.includes(' ')) {
-                dispatch(animalActions.multipleSearchAnimals(searchInput));
+                dispatch(animalActions.multipleSearchAnimals(searchLowerCase));
             } else {
-                dispatch(animalActions.singleSearchAnimals(searchInput));
+                dispatch(animalActions.singleSearchAnimals(searchLowerCase));
             }
         } else { return }
     };    
